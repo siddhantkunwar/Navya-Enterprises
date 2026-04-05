@@ -1,21 +1,41 @@
-export default function HeroSection({ image, title, subtitle, accentWord }) {
+export default function HeroSection({ image, title, subtitle, accentWord, accentWords }) {
   const renderTitle = () => {
-    if (!accentWord || !title.includes(accentWord)) {
-      return title;
-    }
-    const parts = title.split(accentWord);
-    return (
-      <>
-        {parts[0]}<span className="font-accent italic text-sage">{accentWord}</span>{parts[1]}
-      </>
-    );
+    // Support multiple accent words
+    const words = accentWords || (accentWord ? [accentWord] : []);
+    if (words.length === 0) return title;
+
+    // Split title by accent words and wrap them
+    let parts = [title];
+    words.forEach((word) => {
+      const newParts = [];
+      parts.forEach((part) => {
+        if (typeof part === "string" && part.includes(word)) {
+          const segments = part.split(word);
+          segments.forEach((seg, i) => {
+            if (i > 0) {
+              newParts.push(
+                <span key={`accent-${word}-${i}`} className="font-accent italic text-sage">
+                  {word}
+                </span>
+              );
+            }
+            if (seg) newParts.push(seg);
+          });
+        } else {
+          newParts.push(part);
+        }
+      });
+      parts = newParts;
+    });
+
+    return parts;
   };
 
   return (
     <section data-testid="hero-section" className="relative h-[50vh] min-h-[360px] max-h-[500px] overflow-hidden">
       <img
         src={image}
-        alt={title}
+        alt={typeof title === "string" ? title : "Hero"}
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="hero-overlay absolute inset-0" />

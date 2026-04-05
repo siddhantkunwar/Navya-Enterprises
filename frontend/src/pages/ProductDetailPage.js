@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { ArrowLeft } from "lucide-react";
 
@@ -7,8 +7,15 @@ const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 export default function ProductDetailPage() {
   const { productId } = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  // Determine where user came from
+  const cameFrom = location.state?.from || null;
+  const backLabel = cameFrom === "/" ? "Back to Home" : "Back to Products";
+  const backPath = cameFrom === "/" ? "/" : "/products";
 
   useEffect(() => {
     axios
@@ -23,6 +30,14 @@ export default function ProductDetailPage() {
       });
   }, [productId]);
 
+  const handleBack = () => {
+    if (cameFrom) {
+      navigate(cameFrom);
+    } else {
+      navigate(-1);
+    }
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -34,8 +49,8 @@ export default function ProductDetailPage() {
   if (!product) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-4" data-testid="product-not-found">
-        <p className="text-forest/60 text-lg">Product not found.</p>
-        <Link to="/products" className="text-olive font-medium underline">
+        <p className="text-forest/60 text-lg font-body">Product not found.</p>
+        <Link to="/products" className="text-olive font-semibold underline">
           Back to Products
         </Link>
       </div>
@@ -46,14 +61,14 @@ export default function ProductDetailPage() {
     <div data-testid="product-detail-page" className="bg-white">
       {/* Back Button */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
-        <Link
-          to="/products"
+        <button
+          onClick={handleBack}
           data-testid="back-to-products"
-          className="inline-flex items-center gap-2 text-sm text-forest/70 hover:text-olive transition-colors font-medium"
+          className="inline-flex items-center gap-2 text-sm text-forest/70 hover:text-olive transition-colors font-semibold"
         >
           <ArrowLeft size={18} />
-          Back to Products
-        </Link>
+          {backLabel}
+        </button>
       </div>
 
       {/* Product Info */}
@@ -73,20 +88,20 @@ export default function ProductDetailPage() {
 
           {/* Description */}
           <div data-testid="product-info">
-            <span className="inline-block px-4 py-1.5 bg-sage/15 text-forest text-xs font-medium rounded-full uppercase tracking-wider mb-4">
+            <span className="inline-block px-4 py-1.5 bg-sage/15 text-forest text-xs font-semibold rounded-full uppercase tracking-wider mb-4 font-body">
               {product.category}
             </span>
-            <h1 className="font-heading text-3xl sm:text-4xl text-olive font-bold leading-tight">
+            <h1 className="font-heading text-3xl sm:text-4xl text-olive font-extrabold leading-tight">
               {product.name}
             </h1>
-            <p className="mt-6 text-forest/80 leading-relaxed text-base">
+            <p className="mt-6 text-forest/80 leading-relaxed text-base font-body">
               {product.description}
             </p>
 
             {/* Quick info */}
             <div className="mt-8 p-5 bg-sage/8 rounded-xl border border-sage/15">
               <h3 className="font-heading text-lg text-olive font-extrabold mb-2">Why Choose This Product?</h3>
-              <ul className="space-y-2 text-sm text-forest/70">
+              <ul className="space-y-2 text-sm text-forest/70 font-body">
                 <li>Field-tested for Indian agricultural conditions</li>
                 <li>Available for B2B and institutional procurement</li>
                 <li>Dedicated after-sales service & support</li>
@@ -96,7 +111,7 @@ export default function ProductDetailPage() {
             <Link
               to="/connect"
               data-testid="enquiry-btn"
-              className="mt-8 inline-flex items-center gap-2 px-8 py-3.5 bg-olive text-white rounded-full text-sm font-medium hover:bg-forest transition-colors"
+              className="mt-8 inline-flex items-center gap-2 px-8 py-3.5 bg-olive text-white rounded-full text-sm font-semibold hover:bg-forest transition-colors"
             >
               Enquire Now
             </Link>
@@ -127,7 +142,7 @@ export default function ProductDetailPage() {
                 <div className="p-5">
                   <h4 className="font-heading text-lg text-olive font-extrabold">{m.name}</h4>
                   {m.specs && (
-                    <p className="mt-2 text-sm text-forest/60">{m.specs}</p>
+                    <p className="mt-2 text-sm text-forest/60 font-body">{m.specs}</p>
                   )}
                 </div>
               </div>

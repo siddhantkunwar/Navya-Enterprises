@@ -1,5 +1,5 @@
 import HeroSection from "@/components/HeroSection";
-import { Leaf, Target, Eye, ShieldCheck, Truck } from "lucide-react";
+import { Target, Eye, ShieldCheck, Truck, CheckCircle } from "lucide-react";
 
 const HERO_IMG = "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1400&h=600&fit=crop";
 
@@ -22,16 +22,14 @@ export default function AboutPage() {
     <div data-testid="about-page">
       <HeroSection
         image={HERO_IMG}
-        title="About Us"
-        subtitle="Building trust through quality, reliability, and commitment to India's agricultural growth"
-        accentWord="Us"
+        title="Supporting agriculture that's built to last"
+        accentWords={["Supporting", "last"]}
       />
 
-      {/* Business Strategy & Vision - with a generalized heading */}
+      {/* Business Strategy & Vision */}
       <section data-testid="strategy-vision-section" className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <p className="text-sm font-medium text-brown uppercase tracking-widest mb-3">Our Approach</p>
             <h2 className="font-heading text-3xl sm:text-4xl text-olive font-extrabold leading-tight">
               Driven by <AccentHeading>Purpose,</AccentHeading> Guided by <AccentHeading>Quality</AccentHeading>
             </h2>
@@ -94,16 +92,15 @@ export default function AboutPage() {
               />
             </div>
             <div>
-              <p className="text-sm font-medium text-brown uppercase tracking-widest mb-3">Our Story</p>
               <h2 className="font-heading text-3xl sm:text-4xl text-olive font-extrabold leading-tight">
                 About Our <AccentHeading>Firm</AccentHeading>
               </h2>
-              <p className="mt-6 text-forest/80 leading-relaxed">
+              <p className="mt-6 text-forest/80 leading-relaxed font-body">
                 Navya Enterprises has been proudly serving the agricultural community since 1999.
                 Based in Udaipur, Rajasthan, we have grown into a trusted name for agricultural
                 tools, equipment, and inputs across the region.
               </p>
-              <p className="mt-4 text-forest/80 leading-relaxed">
+              <p className="mt-4 text-forest/80 leading-relaxed font-body">
                 We supply tools and inputs across agriculture, floriculture, horticulture, nurseries,
                 greenhouses, and government-backed projects. As an authorized distributor for multiple
                 trusted brands, we provide procurement-ready supply solutions for institutional and
@@ -113,7 +110,7 @@ export default function AboutPage() {
                 {["Since 1999", "Udaipur Based", "B2B & Institutional", "Authorized Distributor"].map((tag) => (
                   <span
                     key={tag}
-                    className="px-4 py-2 bg-olive/10 text-olive text-xs font-medium rounded-full"
+                    className="px-4 py-2 bg-olive/10 text-olive text-xs font-semibold rounded-full font-body"
                   >
                     {tag}
                   </span>
@@ -124,24 +121,38 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Own Product Range */}
+      {/* What We Offer */}
       <section data-testid="product-range-section" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div>
-              <p className="text-sm font-medium text-brown uppercase tracking-widest mb-3">What We Offer</p>
               <h2 className="font-heading text-3xl sm:text-4xl text-olive font-extrabold leading-tight">
-                Our Product <AccentHeading>Range</AccentHeading>
+                What We <AccentHeading>Offer</AccentHeading>
               </h2>
-              <p className="mt-6 text-forest/80 leading-relaxed">
-                A comprehensive range of high-quality agricultural machinery, tools, and inputs designed
-                for reliable performance across diverse farming and horticulture applications.
+              <p className="mt-6 text-forest/80 leading-relaxed font-body">
+                A wide range of high-quality agricultural tools, machinery, and inputs built for reliable performance across farming and horticulture.
               </p>
+
+              {/* Service bullet pointers */}
+              <div className="mt-6 space-y-3">
+                {[
+                  "Quality products from trusted brands",
+                  "Dedicated after-sales service",
+                  "Our own product range",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <CheckCircle size={18} className="text-forest flex-shrink-0" />
+                    <span className="text-sm text-forest/80 font-semibold font-body">{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Categories */}
               <div className="mt-8 grid grid-cols-2 gap-4">
                 {CATEGORIES_OVERVIEW.map((cat) => (
                   <div key={cat} className="flex items-center gap-3">
-                    <Leaf size={16} className="text-forest flex-shrink-0" />
-                    <span className="text-sm text-forest/80 font-medium">{cat}</span>
+                    <div className="w-1.5 h-1.5 rounded-full bg-forest flex-shrink-0" />
+                    <span className="text-sm text-forest/80 font-body">{cat}</span>
                   </div>
                 ))}
               </div>

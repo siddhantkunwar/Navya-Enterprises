@@ -92,6 +92,7 @@ function ProductCarousel({ products }) {
             <Link
               key={p.id}
               to={`/products/${p.id}`}
+              state={{ from: "/" }}
               data-testid={`popular-product-${p.id}`}
               className="product-card flex-shrink-0 w-60 bg-white rounded-2xl overflow-hidden shadow-sm border border-sage/20"
             >
@@ -99,8 +100,7 @@ function ProductCarousel({ products }) {
                 <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
               </div>
               <div className="p-4">
-                <p className="text-xs text-sage font-semibold uppercase tracking-wider font-body">{p.category}</p>
-                <h4 className="font-heading text-base font-extrabold text-olive mt-1 leading-tight">{p.name}</h4>
+                <h4 className="font-heading text-base font-extrabold text-olive leading-tight">{p.name}</h4>
               </div>
             </Link>
           ))}

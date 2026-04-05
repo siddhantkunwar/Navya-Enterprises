@@ -157,6 +157,7 @@ export default function ProductsPage() {
                       <Link
                         key={p.id}
                         to={`/products/${p.id}`}
+                        state={{ from: "/products" }}
                         data-testid={`product-card-${p.id}`}
                         className="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-sage/15"
                       >

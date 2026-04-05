@@ -140,7 +140,7 @@ export default function HomePage() {
             data-testid="hero-title"
             className="font-heading text-4xl sm:text-5xl lg:text-7xl text-white font-black tracking-tight opacity-0 animate-fade-in leading-tight"
           >
-            Built for the fields<br />that feed the future.
+            Built for the fields<br className="hidden sm:block" />{" "}that feed the future.
           </h1>
         </div>
       </section>

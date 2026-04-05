@@ -41,6 +41,15 @@ Build a showcase/catalogue website for Navya Enterprises, an agricultural equipm
 - [x] Brand color palette strictly applied throughout
 - [x] 100% test pass rate (backend, frontend, integration)
 
+### Iteration 2 - Home Page Refinements (Jan 2026)
+- [x] Header changed to white bg for logo contrast
+- [x] Logo size increased 5x (both header h-[160px] and footer)
+- [x] Font changed to Playfair Display (headings) + Lato (body) per reference image
+- [x] Hero image replaced with client-provided field image
+- [x] Tagline changed to "Built for the fields that feed the future."
+- [x] Small headings removed (About Us, Featured, Our Partners, Testimonials)
+- [x] Real brand logos added from ZIP (Stihl, Tata, M&M, Aspee, Falcon, Neptune, OleoMac, Concorde, MaxGreen)
+
 ## Prioritized Backlog
 ### P0 (Critical - Next)
 - Replace dummy images with actual product images (ZIP upload pending from client)

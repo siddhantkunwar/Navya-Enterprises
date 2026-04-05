@@ -59,8 +59,9 @@ module.exports = {
                         }
                 },
                 fontFamily: {
-                        heading: ['"Playfair Display"', 'serif'],
-                        body: ['"Lato"', 'sans-serif'],
+                        heading: ['"Poppins"', 'sans-serif'],
+                        accent: ['"Bodoni Moda"', 'serif'],
+                        body: ['"Inter"', 'sans-serif'],
                 },
                 keyframes: {
                         'accordion-down': {

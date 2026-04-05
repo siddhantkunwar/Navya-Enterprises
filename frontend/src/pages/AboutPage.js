@@ -3,6 +3,11 @@ import { Leaf, Target, Eye, ShieldCheck, Truck } from "lucide-react";
 
 const HERO_IMG = "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1400&h=600&fit=crop";
 
+/* Accent text helper */
+function AccentHeading({ children }) {
+  return <span className="font-accent italic text-brown">{children}</span>;
+}
+
 const CATEGORIES_OVERVIEW = [
   "Farm Machinery",
   "Garden Equipment",
@@ -19,6 +24,7 @@ export default function AboutPage() {
         image={HERO_IMG}
         title="About Us"
         subtitle="Building trust through quality, reliability, and commitment to India's agricultural growth"
+        accentWord="Us"
       />
 
       {/* Business Strategy & Vision - with a generalized heading */}
@@ -26,10 +32,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-sm font-medium text-brown uppercase tracking-widest mb-3">Our Approach</p>
-            <h2 className="font-heading text-3xl sm:text-4xl text-olive font-bold leading-tight">
-              Driven by Purpose, Guided by Quality
+            <h2 className="font-heading text-3xl sm:text-4xl text-olive font-extrabold leading-tight">
+              Driven by <AccentHeading>Purpose,</AccentHeading> Guided by <AccentHeading>Quality</AccentHeading>
             </h2>
-            <p className="mt-6 text-forest/75 leading-relaxed">
+            <p className="mt-6 text-forest/75 leading-relaxed font-body">
               At Navya Enterprises, our strategy is rooted in understanding the real needs of the agricultural community.
               We focus on providing field-tested, purpose-driven products that align with operational and compliance requirements
               of modern farming, horticulture, and allied sectors.
@@ -67,8 +73,8 @@ export default function AboutPage() {
                 <div className="w-12 h-12 rounded-xl bg-olive flex items-center justify-center mb-5 group-hover:bg-forest transition-colors">
                   <item.icon size={22} className="text-sage" />
                 </div>
-                <h3 className="font-heading text-xl text-olive font-semibold">{item.title}</h3>
-                <p className="mt-3 text-sm text-forest/70 leading-relaxed">{item.desc}</p>
+                <h3 className="font-heading text-xl text-olive font-extrabold">{item.title}</h3>
+                <p className="mt-3 text-sm text-forest/70 leading-relaxed font-body">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -89,8 +95,8 @@ export default function AboutPage() {
             </div>
             <div>
               <p className="text-sm font-medium text-brown uppercase tracking-widest mb-3">Our Story</p>
-              <h2 className="font-heading text-3xl sm:text-4xl text-olive font-bold leading-tight">
-                About Our Firm
+              <h2 className="font-heading text-3xl sm:text-4xl text-olive font-extrabold leading-tight">
+                About Our <AccentHeading>Firm</AccentHeading>
               </h2>
               <p className="mt-6 text-forest/80 leading-relaxed">
                 Navya Enterprises has been proudly serving the agricultural community since 1999.
@@ -124,8 +130,8 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div>
               <p className="text-sm font-medium text-brown uppercase tracking-widest mb-3">What We Offer</p>
-              <h2 className="font-heading text-3xl sm:text-4xl text-olive font-bold leading-tight">
-                Our Product Range
+              <h2 className="font-heading text-3xl sm:text-4xl text-olive font-extrabold leading-tight">
+                Our Product <AccentHeading>Range</AccentHeading>
               </h2>
               <p className="mt-6 text-forest/80 leading-relaxed">
                 A comprehensive range of high-quality agricultural machinery, tools, and inputs designed

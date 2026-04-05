@@ -85,7 +85,7 @@ export default function ProductDetailPage() {
 
             {/* Quick info */}
             <div className="mt-8 p-5 bg-sage/8 rounded-xl border border-sage/15">
-              <h3 className="font-heading text-lg text-olive font-semibold mb-2">Why Choose This Product?</h3>
+              <h3 className="font-heading text-lg text-olive font-extrabold mb-2">Why Choose This Product?</h3>
               <ul className="space-y-2 text-sm text-forest/70">
                 <li>Field-tested for Indian agricultural conditions</li>
                 <li>Available for B2B and institutional procurement</li>
@@ -107,7 +107,7 @@ export default function ProductDetailPage() {
       {/* Model Variants */}
       {product.models && product.models.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20" data-testid="model-variants-section">
-          <h2 className="font-heading text-2xl sm:text-3xl text-olive font-bold mb-8">
+          <h2 className="font-heading text-2xl sm:text-3xl text-olive font-extrabold mb-8">
             Available Models & Variants
           </h2>
           <div className="flex gap-5 overflow-x-auto pb-4" style={{ scrollbarWidth: "none" }}>
@@ -125,7 +125,7 @@ export default function ProductDetailPage() {
                   />
                 </div>
                 <div className="p-5">
-                  <h4 className="font-heading text-lg text-olive font-semibold">{m.name}</h4>
+                  <h4 className="font-heading text-lg text-olive font-extrabold">{m.name}</h4>
                   {m.specs && (
                     <p className="mt-2 text-sm text-forest/60">{m.specs}</p>
                   )}

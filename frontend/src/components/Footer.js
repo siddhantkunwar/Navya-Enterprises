@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, Instagram, Youtube } from "lucide-react";
 
-const LOGO_URL = "https://customer-assets.emergentagent.com/job_agri-layout-preview/artifacts/c8iw4etv_Navya%20Logo%20%281%29.png";
+const LOGO_URL = "/navya-logo-trimmed.png";
 
 export default function Footer() {
   return (
@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
           {/* Brand */}
           <div className="space-y-5">
-            <img src={LOGO_URL} alt="Navya Enterprises" className="h-[160px] w-auto" />
+            <img src={LOGO_URL} alt="Navya Enterprises" className="h-16 w-auto" />
             <p className="text-sm leading-relaxed text-sage/60 max-w-xs">
               Proudly serving the agricultural community since 1999. Trusted supplier of tools and inputs across agriculture, floriculture, and horticulture.
             </p>

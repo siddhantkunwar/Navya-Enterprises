@@ -55,6 +55,7 @@ export default function ProductsPage() {
         image={HERO_IMG}
         title="Our Products"
         subtitle="Explore our comprehensive range of agricultural machinery, tools, and inputs"
+        accentWord="Products"
       />
 
       <section className="py-12 lg:py-16 bg-white">
@@ -107,7 +108,7 @@ export default function ProductsPage() {
             {/* Sidebar Checkbox List */}
             <aside className="hidden lg:block w-64 flex-shrink-0" data-testid="category-sidebar">
               <div className="sticky top-28 bg-sage/5 rounded-2xl p-6 border border-sage/15">
-                <h3 className="font-heading text-lg text-olive font-semibold mb-5">Filter by Category</h3>
+                <h3 className="font-heading text-lg text-olive font-extrabold mb-5">Filter by Category</h3>
                 <div className="flex flex-col gap-3">
                   {categories.map((cat) => {
                     const count = products.filter((p) => p.category === cat).length;

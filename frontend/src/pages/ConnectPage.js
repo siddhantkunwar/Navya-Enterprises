@@ -36,6 +36,7 @@ export default function ConnectPage() {
         image={HERO_IMG}
         title="Connect With Us"
         subtitle="Reach out to discuss your agricultural requirements and procurement needs"
+        accentWord="Us"
       />
 
       <section className="py-20 lg:py-28 bg-white" data-testid="contact-info-section">

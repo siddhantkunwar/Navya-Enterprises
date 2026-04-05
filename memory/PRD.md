@@ -66,6 +66,16 @@ Build a showcase/catalogue website for Navya Enterprises, an agricultural equipm
 - [x] "Our Product Range" renamed to "What We Offer" with Bodoni Moda accent style
 - [x] Under "What We Offer": Shortened text + 3 service bullet points (Quality products, Dedicated after-sales, Own product range)
 
+### Iteration 5 - Multi-page Refinements (Jan 2026)
+- [x] Logo size increased 3x to h-[190px] in header and footer
+- [x] Popular product cards 3x bigger (w-80 width, h-64 image height)
+- [x] About page "What We Offer": Category bullet list removed
+- [x] Products page tagline: "Equipment that earns its place in the field." with accent keywords
+- [x] Products page: Left sidebar filter removed entirely, only category button filters kept
+- [x] Connect page: "Contact Details" heading removed
+- [x] Connect page: "Business Name"/"Navya Enterprises" → "Point of Contact"/"Vinay Gupta"
+- [x] Connect page: Business timing changed to 11:00 AM, website section removed
+
 ## Prioritized Backlog
 ### P0 (Critical - Next)
 - Replace dummy images with actual product images (ZIP upload pending from client)

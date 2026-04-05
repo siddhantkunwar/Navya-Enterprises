@@ -50,6 +50,13 @@ Build a showcase/catalogue website for Navya Enterprises, an agricultural equipm
 - [x] Small headings removed (About Us, Featured, Our Partners, Testimonials)
 - [x] Real brand logos added from ZIP (Stihl, Tata, M&M, Aspee, Falcon, Neptune, OleoMac, Concorde, MaxGreen)
 
+### Iteration 3 - Font & Slider Refinements (Jan 2026)
+- [x] Logo trimmed (removed whitespace padding) for clear visibility in compact header (h-16)
+- [x] Fonts changed to: Poppins (Extra Bold) headings, Bodoni Moda (Italic) accent keywords, Inter (Regular) body
+- [x] Dual-font style: accent keywords ("fields", "future", "Excellence", "Products", etc.) in Bodoni Moda italic
+- [x] Arrow buttons replaced with sleek embla-carousel dot slider indicators
+- [x] Brand logos increased 3x to w-52 h-52 (208px)
+
 ## Prioritized Backlog
 ### P0 (Critical - Next)
 - Replace dummy images with actual product images (ZIP upload pending from client)

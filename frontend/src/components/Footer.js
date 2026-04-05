@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
           {/* Brand */}
           <div className="space-y-5">
-            <img src={LOGO_URL} alt="Navya Enterprises" className="h-16 w-auto" />
+            <img src={LOGO_URL} alt="Navya Enterprises" className="h-[160px] w-auto" />
             <p className="text-sm leading-relaxed text-sage/60 max-w-xs">
               Proudly serving the agricultural community since 1999. Trusted supplier of tools and inputs across agriculture, floriculture, and horticulture.
             </p>
@@ -18,7 +18,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-5">
-            <h4 className="font-heading text-xl text-white font-semibold">Quick Links</h4>
+            <h4 className="font-heading text-xl text-white font-bold">Quick Links</h4>
             <div className="flex flex-col gap-3">
               {[
                 { label: "Home", path: "/" },
@@ -40,7 +40,7 @@ export default function Footer() {
 
           {/* Contact + Social */}
           <div className="space-y-5">
-            <h4 className="font-heading text-xl text-white font-semibold">Get In Touch</h4>
+            <h4 className="font-heading text-xl text-white font-bold">Get In Touch</h4>
             <div className="flex flex-col gap-3 text-sm">
               <div className="flex items-start gap-3">
                 <MapPin size={16} className="mt-0.5 flex-shrink-0 text-sage" />

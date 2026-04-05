@@ -2,19 +2,21 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, ArrowRight, CheckCircle } from "lucide-react";
 import axios from "axios";
-import HeroSection from "@/components/HeroSection";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
-const HERO_IMG = "https://images.unsplash.com/photo-1706862609885-7771b001daa2?w=1400&h=600&fit=crop";
+const HERO_IMG = "https://customer-assets.emergentagent.com/job_agri-layout-preview/artifacts/3eyqyo7h_hero%20image%20for%20home%20page.png";
 
 const BRAND_LOGOS = [
-  { name: "Stihl", img: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=200&h=200&fit=crop" },
-  { name: "Honda", img: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=200&h=200&fit=crop" },
-  { name: "Husqvarna", img: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=200&h=200&fit=crop" },
-  { name: "Jain Irrigation", img: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=200&h=200&fit=crop" },
-  { name: "Kirloskar", img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=200&h=200&fit=crop" },
-  { name: "Falcon", img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=200&h=200&fit=crop" },
+  { name: "Stihl", img: "/brands/stihl.png" },
+  { name: "Tata", img: "/brands/tata.png" },
+  { name: "Mahindra & Mahindra", img: "/brands/M&M.png" },
+  { name: "Aspee", img: "/brands/Aspee.png" },
+  { name: "Falcon", img: "/brands/falcon.png" },
+  { name: "Neptune", img: "/brands/neptune.png" },
+  { name: "OleoMac", img: "/brands/oleomac.png" },
+  { name: "Concorde", img: "/brands/concorde.png" },
+  { name: "MaxGreen", img: "/brands/maxgreen.png" },
 ];
 
 const TESTIMONIALS = [
@@ -57,8 +59,8 @@ function ProductCarousel({ products }) {
               <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
             </div>
             <div className="p-4">
-              <p className="text-xs text-sage font-medium uppercase tracking-wider">{p.category}</p>
-              <h4 className="font-heading text-lg font-semibold text-olive mt-1 leading-tight">{p.name}</h4>
+              <p className="text-xs text-sage font-bold uppercase tracking-wider">{p.category}</p>
+              <h4 className="font-heading text-lg font-bold text-olive mt-1 leading-tight">{p.name}</h4>
             </div>
           </Link>
         ))}
@@ -93,14 +95,14 @@ function BrandsCarousel() {
         <ChevronLeft size={20} />
       </button>
 
-      <div ref={scrollRef} className="flex gap-8 overflow-x-auto scrollbar-hide scroll-smooth px-2 py-4 items-center justify-center" style={{ scrollbarWidth: "none" }}>
+      <div ref={scrollRef} className="flex gap-10 overflow-x-auto scrollbar-hide scroll-smooth px-2 py-4 items-center justify-center" style={{ scrollbarWidth: "none" }}>
         {BRAND_LOGOS.map((b, i) => (
           <div
             key={i}
             data-testid={`brand-logo-${i}`}
-            className="flex-shrink-0 w-24 h-24 rounded-full bg-white shadow-sm border border-sage/20 flex items-center justify-center overflow-hidden hover:shadow-md transition-shadow"
+            className="flex-shrink-0 w-28 h-28 rounded-full bg-white shadow-sm border border-sage/20 flex items-center justify-center overflow-hidden hover:shadow-md transition-shadow p-3"
           >
-            <img src={b.img} alt={b.name} className="w-full h-full object-cover rounded-full" />
+            <img src={b.img} alt={b.name} className="w-full h-full object-contain" />
           </div>
         ))}
       </div>
@@ -126,19 +128,29 @@ export default function HomePage() {
   return (
     <div data-testid="home-page">
       {/* Hero */}
-      <HeroSection
-        image={HERO_IMG}
-        title="Navya Enterprises"
-        subtitle="Trusted agricultural solutions since 1999 — supplying quality tools & inputs for farms, nurseries & greenhouses"
-      />
+      <section data-testid="hero-section" className="relative h-[60vh] min-h-[420px] max-h-[600px] overflow-hidden">
+        <img
+          src={HERO_IMG}
+          alt="Agricultural landscape"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="hero-overlay absolute inset-0" />
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
+          <h1
+            data-testid="hero-title"
+            className="font-heading text-4xl sm:text-5xl lg:text-7xl text-white font-black tracking-tight opacity-0 animate-fade-in leading-tight"
+          >
+            Built for the fields<br />that feed the future.
+          </h1>
+        </div>
+      </section>
 
       {/* Brief About + Work Image */}
       <section data-testid="about-brief-section" className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="opacity-0 animate-slide-in-left">
-              <p className="text-sm font-medium text-brown uppercase tracking-widest mb-3">About Us</p>
-              <h2 className="font-heading text-3xl sm:text-4xl text-olive font-bold leading-tight">
+              <h2 className="font-heading text-3xl sm:text-4xl text-olive font-black leading-tight">
                 Serving the Agricultural Community with Excellence
               </h2>
               <p className="mt-6 text-forest/80 leading-relaxed">
@@ -162,7 +174,7 @@ export default function HomePage() {
               <Link
                 to="/about"
                 data-testid="home-about-link"
-                className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-olive text-white rounded-full text-sm font-medium hover:bg-forest transition-colors"
+                className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-olive text-white rounded-full text-sm font-bold hover:bg-forest transition-colors"
               >
                 Learn More <ArrowRight size={16} />
               </Link>
@@ -185,15 +197,14 @@ export default function HomePage() {
       <section data-testid="popular-products-section" className="py-20 bg-gradient-to-b from-white to-sage/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="text-sm font-medium text-brown uppercase tracking-widest mb-2">Featured</p>
-            <h2 className="font-heading text-3xl sm:text-4xl text-olive font-bold">Popular Products</h2>
+            <h2 className="font-heading text-3xl sm:text-4xl text-olive font-black">Popular Products</h2>
           </div>
           <ProductCarousel products={popularProducts} />
           <div className="text-center mt-10">
             <Link
               to="/products"
               data-testid="home-view-all-products"
-              className="inline-flex items-center gap-2 px-6 py-3 border-2 border-olive text-olive rounded-full text-sm font-medium hover:bg-olive hover:text-white transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 border-2 border-olive text-olive rounded-full text-sm font-bold hover:bg-olive hover:text-white transition-all"
             >
               View All Products <ArrowRight size={16} />
             </Link>
@@ -205,8 +216,7 @@ export default function HomePage() {
       <section data-testid="brands-section" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="text-sm font-medium text-brown uppercase tracking-widest mb-2">Our Partners</p>
-            <h2 className="font-heading text-3xl sm:text-4xl text-olive font-bold">Brands We Deal With</h2>
+            <h2 className="font-heading text-3xl sm:text-4xl text-olive font-black">Brands We Deal With</h2>
           </div>
           <BrandsCarousel />
         </div>
@@ -216,8 +226,7 @@ export default function HomePage() {
       <section data-testid="testimonials-section" className="py-20 bg-sage/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="text-sm font-medium text-brown uppercase tracking-widest mb-2">Testimonials</p>
-            <h2 className="font-heading text-3xl sm:text-4xl text-olive font-bold">What Our Clients Say</h2>
+            <h2 className="font-heading text-3xl sm:text-4xl text-olive font-black">What Our Clients Say</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {TESTIMONIALS.map((t, i) => (
@@ -228,7 +237,7 @@ export default function HomePage() {
               >
                 <p className="text-forest/70 text-sm leading-relaxed italic">"{t.text}"</p>
                 <div className="mt-5 pt-4 border-t border-sage/15">
-                  <p className="font-heading text-lg font-semibold text-olive">{t.name}</p>
+                  <p className="font-heading text-lg font-bold text-olive">{t.name}</p>
                   <p className="text-xs text-sage">{t.location}</p>
                 </div>
               </div>

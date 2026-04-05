@@ -59,8 +59,8 @@ module.exports = {
                         }
                 },
                 fontFamily: {
-                        heading: ['"Cormorant Garamond"', 'serif'],
-                        body: ['"Outfit"', 'sans-serif'],
+                        heading: ['"Playfair Display"', 'serif'],
+                        body: ['"Lato"', 'sans-serif'],
                 },
                 keyframes: {
                         'accordion-down': {

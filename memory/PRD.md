@@ -57,6 +57,15 @@ Build a showcase/catalogue website for Navya Enterprises, an agricultural equipm
 - [x] Arrow buttons replaced with sleek embla-carousel dot slider indicators
 - [x] Brand logos increased 3x to w-52 h-52 (208px)
 
+### Iteration 4 - Logo, Back Button, About Page (Jan 2026)
+- [x] New logo image (black bg) processed to transparent bg, trimmed, and applied to header + footer
+- [x] Popular products on homepage: category labels removed, only product name shown
+- [x] Smart back button on product detail page: "Back to Home" from homepage, "Back to Products" from products page (React Router state-based)
+- [x] About Us tagline: "Supporting agriculture that's built to last" with "Supporting" & "last" as Bodoni Moda accents
+- [x] About Us: Removed short headings "Our Approach", "Our Story", "What We Offer" sub-label
+- [x] "Our Product Range" renamed to "What We Offer" with Bodoni Moda accent style
+- [x] Under "What We Offer": Shortened text + 3 service bullet points (Quality products, Dedicated after-sales, Own product range)
+
 ## Prioritized Backlog
 ### P0 (Critical - Next)
 - Replace dummy images with actual product images (ZIP upload pending from client)

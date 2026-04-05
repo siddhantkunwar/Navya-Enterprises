@@ -147,15 +147,7 @@ export default function AboutPage() {
                 ))}
               </div>
 
-              {/* Categories */}
-              <div className="mt-8 grid grid-cols-2 gap-4">
-                {CATEGORIES_OVERVIEW.map((cat) => (
-                  <div key={cat} className="flex items-center gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-forest flex-shrink-0" />
-                    <span className="text-sm text-forest/80 font-body">{cat}</span>
-                  </div>
-                ))}
-              </div>
+              {/* Categories removed as per user request */}
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg">
               <img

@@ -94,9 +94,9 @@ function ProductCarousel({ products }) {
               to={`/products/${p.id}`}
               state={{ from: "/" }}
               data-testid={`popular-product-${p.id}`}
-              className="product-card flex-shrink-0 w-60 bg-white rounded-2xl overflow-hidden shadow-sm border border-sage/20"
+              className="product-card flex-shrink-0 w-80 bg-white rounded-2xl overflow-hidden shadow-sm border border-sage/20"
             >
-              <div className="h-44 overflow-hidden">
+              <div className="h-64 overflow-hidden">
                 <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
               </div>
               <div className="p-4">

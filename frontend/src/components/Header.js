@@ -8,7 +8,7 @@ const NAV_ITEMS = [
   { label: "Home", path: "/" },
   { label: "About Us", path: "/about" },
   { label: "Products", path: "/products" },
-  { label: "Connect", path: "/connect" },
+  { label: "Connect With Us", path: "/connect" },
 ];
 
 export default function Header() {
@@ -27,7 +27,7 @@ export default function Header() {
             <img
               src={LOGO_URL}
               alt="Navya Enterprises"
-              className="h-[190px] w-auto object-contain"
+              className="h-[127px] w-auto object-contain"
             />
           </Link>
 
@@ -40,7 +40,7 @@ export default function Header() {
                   key={item.path}
                   to={item.path}
                   data-testid={`nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
-                  className={`px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300
+                  className={`px-8 py-4 rounded-full text-base font-bold tracking-wide transition-all duration-300
                     ${isActive
                       ? "bg-olive text-white"
                       : "text-olive hover:text-forest hover:bg-sage/15"

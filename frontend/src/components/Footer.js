@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
           {/* Brand */}
           <div className="space-y-5">
-            <img src={LOGO_URL} alt="Navya Enterprises" className="h-[190px] w-auto" />
+            <img src={LOGO_URL} alt="Navya Enterprises" className="h-[127px] w-auto" />
             <p className="text-sm leading-relaxed text-sage/60 max-w-xs">
               Proudly serving the agricultural community since 1999. Trusted supplier of tools and inputs across agriculture, floriculture, and horticulture.
             </p>

@@ -197,7 +197,7 @@ PRODUCTS_DATA = [
      "models": [{"name": "Digging Fork", "specs": "4 tines | Forged steel | D-handle"},{"name": "Border Fork", "specs": "4 tines | Compact | Tight spaces"},{"name": "Compost Fork", "specs": "5 tines | Long handle | Turning"}]},
     {"name": "Grafting Knife", "category": "Garden Equipment", "description": "Sharp grafting knife with precision blade for making clean cuts during grafting operations.",
      "benefits": ["Precision blade for clean grafting cuts", "Folding design for safe storage", "Available with bark lifter option"],
-     "models": [{"name": "Standard Grafting Knife", "specs": "Stainless steel | Folding | Single blade"},{"name": "Budding Knife", "specs": "With bark lifter | Carbon steel"},{"name": "Grafting Knife Model 1", "specs": "Professional grade | Ergonomic handle"},{"name": "Grafting Knife Model 2", "specs": "Heavy duty | Multi-purpose blade"}]},
+     "models": [{"name": "Variant 1", "specs": "Professional grade | Ergonomic handle"},{"name": "Variant 2", "specs": "Heavy duty | Multi-purpose blade"}]},
     {"name": "Manual Weeder", "category": "Garden Equipment", "description": "Ergonomic hand weeder for removing weeds without disturbing surrounding plants.",
      "benefits": ["Removes weeds from root level", "Ergonomic design reduces hand fatigue", "Compact for tight garden spaces"],
      "models": [{"name": "Hand Weeder", "specs": "Forked tip | Steel | Short handle"},{"name": "Stand-up Weeder", "specs": "No bending | Long handle | Foot pedal"},{"name": "Cape Cod Weeder", "specs": "L-shaped blade | Precision"}]},
@@ -209,7 +209,7 @@ PRODUCTS_DATA = [
      "models": [{"name": "Plain Sickle", "specs": "Smooth edge | Carbon steel | Light"},{"name": "Serrated Sickle", "specs": "Serrated edge | Stainless steel"}]},
     {"name": "Secateur", "category": "Garden Equipment", "description": "High-quality secateur for precise pruning of stems and branches up to 25mm diameter.",
      "benefits": ["Clean bypass cuts for healthy plant growth", "Ergonomic handle reduces hand strain", "Hardened steel blades for long life"],
-     "models": [{"name": "Bypass Secateur", "specs": "Max cut: 20mm | SK5 steel | Ergonomic"},{"name": "Anvil Secateur", "specs": "Max cut: 25mm | Hardened steel"},{"name": "Ratchet Secateur", "specs": "Max cut: 25mm | Ratchet mechanism"},{"name": "Bypass Pruner", "specs": "Max cut: 20mm | Precision-ground blade | Spring-loaded"},{"name": "Anvil Pruner", "specs": "Max cut: 28mm | Ratchet mechanism | For dry & dead wood"}]},
+     "models": [{"name": "Anvil Secateur", "specs": "Max cut: 25mm | Hardened steel"},{"name": "Ratchet Secateur", "specs": "Max cut: 25mm | Ratchet mechanism"},{"name": "Bypass Pruner", "specs": "Max cut: 20mm | Precision-ground blade | Spring-loaded"},{"name": "Anvil Pruner", "specs": "Max cut: 28mm | Ratchet mechanism | For dry & dead wood"}]},
     {"name": "Hedge Shear", "category": "Garden Equipment", "description": "Long-handled hedge shear for trimming and shaping hedges with precision.",
      "benefits": ["Even trimming for neat hedge appearance", "Long handles for comfortable reach", "Precision blades for clean cuts"],
      "models": [{"name": "Standard Hedge Shear", "specs": "8 inch blade | Steel | Wooden handle"},{"name": "Wavy Blade Hedge Shear", "specs": "10 inch | Wavy blade | Non-slip"},{"name": "Telescopic Hedge Shear", "specs": "Adjustable length | Lightweight"}]},
@@ -364,10 +364,13 @@ async def seed_products():
     await db.products.drop()
     products_to_insert = []
 
+    # Only these products keep their model variants
+    PRODUCTS_WITH_VARIANTS = ["Secateur", "Grafting Knife"]
+
     # Special model image mappings
     model_images = {
-        "Grafting Knife Model 1": "/products/grafting_knife_model_1.png",
-        "Grafting Knife Model 2": "/products/grafting_knife_model_2.png",
+        "Variant 1": "/products/grafting_knife_model_1.png",
+        "Variant 2": "/products/grafting_knife_model_2.png",
         "Bypass Pruner": "/products/bypass_pruner.png",
         "Anvil Pruner": "/products/anvil_pruner.png",
     }
@@ -376,13 +379,14 @@ async def seed_products():
         img = IMG.get(p["name"], "/products/bund_maker.png")
         is_popular = p["name"] in POPULAR_NAMES
         models_with_img = []
-        for m in p.get("models", []):
-            m_img = model_images.get(m["name"], img)
-            models_with_img.append({
-                "name": m["name"],
-                "image": m_img,
-                "specs": m.get("specs", "")
-            })
+        if p["name"] in PRODUCTS_WITH_VARIANTS:
+            for m in p.get("models", []):
+                m_img = model_images.get(m["name"], img)
+                models_with_img.append({
+                    "name": m["name"],
+                    "image": m_img,
+                    "specs": m.get("specs", "")
+                })
         products_to_insert.append({
             "id": str(uuid.uuid4()),
             "name": p["name"],

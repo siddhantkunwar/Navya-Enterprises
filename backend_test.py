@@ -86,14 +86,26 @@ class NavyaAPITester:
             "GET",
             "api/products",
             200,
-            expected_count=72  # Expecting exactly 72 products
+            expected_count=70  # Expecting exactly 70 products (Iteration 8: Bypass Pruner and Anvil Pruner removed as standalone)
         )
         if success and isinstance(response, list):
             print(f"   📊 Total products found: {len(response)}")
-            if len(response) == 72:
-                print(f"   ✅ Correct count: exactly 72 products")
+            if len(response) == 70:
+                print(f"   ✅ Correct count: exactly 70 products")
             else:
-                print(f"   ⚠️  Expected 72 products, got {len(response)}")
+                print(f"   ⚠️  Expected 70 products, got {len(response)}")
+            
+            # Iteration 8: Check that Bypass Pruner and Anvil Pruner are NOT standalone products
+            product_names = [p.get('name', '') for p in response]
+            if 'Bypass Pruner' in product_names:
+                print(f"   ❌ Found 'Bypass Pruner' as standalone product (should be variant only)")
+            else:
+                print(f"   ✅ 'Bypass Pruner' not found as standalone product (correct)")
+            
+            if 'Anvil Pruner' in product_names:
+                print(f"   ❌ Found 'Anvil Pruner' as standalone product (should be variant only)")
+            else:
+                print(f"   ✅ 'Anvil Pruner' not found as standalone product (correct)")
             
             # Check if products have required fields and real images
             if response:
@@ -278,6 +290,154 @@ class NavyaAPITester:
             404
         )
         return success
+    
+    def test_secateur_variants(self):
+        """Test Secateur product has 5 model variants (Iteration 8)"""
+        try:
+            # Get all products to find Secateur
+            response = requests.get(f"{self.base_url}/api/products", timeout=10)
+            if response.status_code == 200:
+                products = response.json()
+                secateur = next((p for p in products if p.get('name') == 'Secateur'), None)
+                
+                if not secateur:
+                    print("❌ Secateur product not found")
+                    self.failed_tests.append("Secateur Variants: Product not found")
+                    self.tests_run += 1
+                    return False
+                
+                # Get full product details
+                product_id = secateur['id']
+                success, product_data = self.run_test(
+                    "Secateur Product Variants",
+                    "GET",
+                    f"api/products/{product_id}",
+                    200
+                )
+                
+                if success and isinstance(product_data, dict):
+                    models = product_data.get('models', [])
+                    print(f"   📊 Secateur model variants: {len(models)}")
+                    
+                    expected_variants = ['Bypass Secateur', 'Anvil Secateur', 'Ratchet Secateur', 'Bypass Pruner', 'Anvil Pruner']
+                    
+                    if len(models) == 5:
+                        print(f"   ✅ Correct count: exactly 5 model variants")
+                    else:
+                        print(f"   ❌ Expected 5 variants, got {len(models)}")
+                    
+                    # Check variant names
+                    variant_names = [m.get('name', '') for m in models]
+                    print(f"   📋 Variants: {', '.join(variant_names)}")
+                    
+                    missing_variants = [v for v in expected_variants if v not in variant_names]
+                    if missing_variants:
+                        print(f"   ❌ Missing expected variants: {missing_variants}")
+                    else:
+                        print(f"   ✅ All expected variants present")
+                    
+                    # Check if Bypass Pruner and Anvil Pruner have their own images
+                    bypass_pruner = next((m for m in models if m.get('name') == 'Bypass Pruner'), None)
+                    anvil_pruner = next((m for m in models if m.get('name') == 'Anvil Pruner'), None)
+                    
+                    if bypass_pruner:
+                        bp_image = bypass_pruner.get('image', '')
+                        if bp_image == '/products/bypass_pruner.png':
+                            print(f"   ✅ Bypass Pruner has correct image: {bp_image}")
+                        else:
+                            print(f"   ⚠️  Bypass Pruner image: {bp_image} (expected /products/bypass_pruner.png)")
+                    
+                    if anvil_pruner:
+                        ap_image = anvil_pruner.get('image', '')
+                        if ap_image == '/products/anvil_pruner.png':
+                            print(f"   ✅ Anvil Pruner has correct image: {ap_image}")
+                        else:
+                            print(f"   ⚠️  Anvil Pruner image: {ap_image} (expected /products/anvil_pruner.png)")
+                    
+                    return len(models) == 5 and not missing_variants
+                return False
+            else:
+                print("❌ Could not fetch products for Secateur test")
+                self.failed_tests.append("Secateur Variants: Could not fetch products")
+                self.tests_run += 1
+                return False
+        except Exception as e:
+            print(f"❌ Error in Secateur variants test: {e}")
+            self.failed_tests.append(f"Secateur Variants: {e}")
+            self.tests_run += 1
+            return False
+    
+    def test_grafting_knife_variants(self):
+        """Test Grafting Knife product has 4 model variants (Iteration 8)"""
+        try:
+            # Get all products to find Grafting Knife
+            response = requests.get(f"{self.base_url}/api/products", timeout=10)
+            if response.status_code == 200:
+                products = response.json()
+                grafting_knife = next((p for p in products if p.get('name') == 'Grafting Knife'), None)
+                
+                if not grafting_knife:
+                    print("❌ Grafting Knife product not found")
+                    self.failed_tests.append("Grafting Knife Variants: Product not found")
+                    self.tests_run += 1
+                    return False
+                
+                # Get full product details
+                product_id = grafting_knife['id']
+                success, product_data = self.run_test(
+                    "Grafting Knife Product Variants",
+                    "GET",
+                    f"api/products/{product_id}",
+                    200
+                )
+                
+                if success and isinstance(product_data, dict):
+                    models = product_data.get('models', [])
+                    print(f"   📊 Grafting Knife model variants: {len(models)}")
+                    
+                    if len(models) == 4:
+                        print(f"   ✅ Correct count: exactly 4 model variants")
+                    else:
+                        print(f"   ❌ Expected 4 variants, got {len(models)}")
+                    
+                    # Check variant names
+                    variant_names = [m.get('name', '') for m in models]
+                    print(f"   📋 Variants: {', '.join(variant_names)}")
+                    
+                    # Check if Model 1 and Model 2 have their own images
+                    model1 = next((m for m in models if m.get('name') == 'Grafting Knife Model 1'), None)
+                    model2 = next((m for m in models if m.get('name') == 'Grafting Knife Model 2'), None)
+                    
+                    if model1:
+                        m1_image = model1.get('image', '')
+                        if m1_image == '/products/grafting_knife_model_1.png':
+                            print(f"   ✅ Grafting Knife Model 1 has correct image: {m1_image}")
+                        else:
+                            print(f"   ⚠️  Grafting Knife Model 1 image: {m1_image} (expected /products/grafting_knife_model_1.png)")
+                    else:
+                        print(f"   ⚠️  Grafting Knife Model 1 not found in variants")
+                    
+                    if model2:
+                        m2_image = model2.get('image', '')
+                        if m2_image == '/products/grafting_knife_model_2.png':
+                            print(f"   ✅ Grafting Knife Model 2 has correct image: {m2_image}")
+                        else:
+                            print(f"   ⚠️  Grafting Knife Model 2 image: {m2_image} (expected /products/grafting_knife_model_2.png)")
+                    else:
+                        print(f"   ⚠️  Grafting Knife Model 2 not found in variants")
+                    
+                    return len(models) == 4
+                return False
+            else:
+                print("❌ Could not fetch products for Grafting Knife test")
+                self.failed_tests.append("Grafting Knife Variants: Could not fetch products")
+                self.tests_run += 1
+                return False
+        except Exception as e:
+            print(f"❌ Error in Grafting Knife variants test: {e}")
+            self.failed_tests.append(f"Grafting Knife Variants: {e}")
+            self.tests_run += 1
+            return False
 
 def main():
     print("🚀 Starting Navya Enterprises API Testing")
@@ -300,6 +460,11 @@ def main():
     test_results.append(("Single Product", tester.test_get_single_product()))
     test_results.append(("Contact Info", tester.test_get_contact_info()))
     test_results.append(("Invalid Product ID", tester.test_invalid_product_id()))
+    
+    # Iteration 8 specific tests
+    print("\n📋 Running Iteration 8 Specific Tests...")
+    test_results.append(("Secateur Variants", tester.test_secateur_variants()))
+    test_results.append(("Grafting Knife Variants", tester.test_grafting_knife_variants()))
     
     # Print results summary
     print("\n" + "=" * 60)

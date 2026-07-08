@@ -123,6 +123,38 @@ export default function ProductDetailPage() {
           </div>
         </div>
       </section>
+
+      {/* Model Variants - only show if models exist */}
+      {product.models && product.models.length > 0 && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20" data-testid="model-variants-section">
+          <h2 className="font-heading text-2xl sm:text-3xl text-olive font-extrabold mb-8">
+            Product <span className="font-accent italic text-brown">Variants</span>
+          </h2>
+          <div className="flex gap-5 overflow-x-auto pb-4" style={{ scrollbarWidth: "none" }}>
+            {product.models.map((m, i) => (
+              <div
+                key={i}
+                data-testid={`model-variant-${i}`}
+                className="flex-shrink-0 w-72 bg-white rounded-2xl overflow-hidden shadow-sm border border-sage/15 hover:shadow-md transition-shadow"
+              >
+                <div className="h-44 overflow-hidden bg-white">
+                  <img
+                    src={m.image}
+                    alt={m.name}
+                    className="w-full h-full object-contain p-3"
+                  />
+                </div>
+                <div className="p-5">
+                  <h4 className="font-heading text-lg text-olive font-extrabold">{m.name}</h4>
+                  {m.specs && (
+                    <p className="mt-2 text-sm text-forest/60 font-body">{m.specs}</p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }

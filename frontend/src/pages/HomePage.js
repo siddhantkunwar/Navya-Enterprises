@@ -112,32 +112,22 @@ function ProductCarousel({ products }) {
 }
 
 function BrandsCarousel() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "start",
-    loop: false,
-    slidesToScroll: 3,
-    containScroll: "trimSnaps",
-    dragFree: true,
-  });
-
-  const snapCount = emblaApi ? emblaApi.scrollSnapList().length : 0;
+  // Double the logos for seamless infinite loop
+  const doubled = [...BRAND_LOGOS, ...BRAND_LOGOS];
 
   return (
-    <div data-testid="brands-carousel">
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex gap-8 items-center">
-          {BRAND_LOGOS.map((b, i) => (
-            <div
-              key={i}
-              data-testid={`brand-logo-${i}`}
-              className="flex-shrink-0 w-52 h-52 rounded-2xl bg-white shadow-sm border border-sage/20 flex items-center justify-center overflow-hidden hover:shadow-md transition-shadow p-5"
-            >
-              <img src={b.img} alt={b.name} className="w-full h-full object-contain" />
-            </div>
-          ))}
-        </div>
+    <div data-testid="brands-carousel" className="overflow-hidden">
+      <div className="brands-marquee flex items-center gap-10">
+        {doubled.map((b, i) => (
+          <div
+            key={i}
+            data-testid={`brand-logo-${i}`}
+            className="flex-shrink-0 w-52 h-52 rounded-2xl bg-white shadow-sm border border-sage/20 flex items-center justify-center overflow-hidden hover:shadow-md transition-shadow p-5"
+          >
+            <img src={b.img} alt={b.name} className="w-full h-full object-contain" />
+          </div>
+        ))}
       </div>
-      <SliderDots api={emblaApi} count={snapCount} />
     </div>
   );
 }

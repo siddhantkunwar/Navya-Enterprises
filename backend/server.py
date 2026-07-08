@@ -73,8 +73,6 @@ IMG = {
     "Trowel": "/products/trowel.png",
     "Sickle": "/products/sickle.png",
     "Secateur": "/products/secateur.png",
-    "Bypass Pruner": "/products/bypass_pruner.png",
-    "Anvil Pruner": "/products/anvil_pruner.png",
     "Hedge Shear": "/products/hedge_shear.png",
     "Grafting Machine": "/products/grafting_machine.png",
     "Nursery Bags": "/products/nursery_bags.png",
@@ -199,7 +197,7 @@ PRODUCTS_DATA = [
      "models": [{"name": "Digging Fork", "specs": "4 tines | Forged steel | D-handle"},{"name": "Border Fork", "specs": "4 tines | Compact | Tight spaces"},{"name": "Compost Fork", "specs": "5 tines | Long handle | Turning"}]},
     {"name": "Grafting Knife", "category": "Garden Equipment", "description": "Sharp grafting knife with precision blade for making clean cuts during grafting operations.",
      "benefits": ["Precision blade for clean grafting cuts", "Folding design for safe storage", "Available with bark lifter option"],
-     "models": [{"name": "Standard Grafting Knife", "specs": "Stainless steel | Folding | Single blade"},{"name": "Budding Knife", "specs": "With bark lifter | Carbon steel"},{"name": "Professional Grafting Set", "specs": "Multiple blades | Leather case"}]},
+     "models": [{"name": "Standard Grafting Knife", "specs": "Stainless steel | Folding | Single blade"},{"name": "Budding Knife", "specs": "With bark lifter | Carbon steel"},{"name": "Grafting Knife Model 1", "specs": "Professional grade | Ergonomic handle"},{"name": "Grafting Knife Model 2", "specs": "Heavy duty | Multi-purpose blade"}]},
     {"name": "Manual Weeder", "category": "Garden Equipment", "description": "Ergonomic hand weeder for removing weeds without disturbing surrounding plants.",
      "benefits": ["Removes weeds from root level", "Ergonomic design reduces hand fatigue", "Compact for tight garden spaces"],
      "models": [{"name": "Hand Weeder", "specs": "Forked tip | Steel | Short handle"},{"name": "Stand-up Weeder", "specs": "No bending | Long handle | Foot pedal"},{"name": "Cape Cod Weeder", "specs": "L-shaped blade | Precision"}]},
@@ -211,13 +209,7 @@ PRODUCTS_DATA = [
      "models": [{"name": "Plain Sickle", "specs": "Smooth edge | Carbon steel | Light"},{"name": "Serrated Sickle", "specs": "Serrated edge | Stainless steel"}]},
     {"name": "Secateur", "category": "Garden Equipment", "description": "High-quality secateur for precise pruning of stems and branches up to 25mm diameter.",
      "benefits": ["Clean bypass cuts for healthy plant growth", "Ergonomic handle reduces hand strain", "Hardened steel blades for long life"],
-     "models": [{"name": "Bypass Secateur", "specs": "Max cut: 20mm | SK5 steel | Ergonomic"},{"name": "Anvil Secateur", "specs": "Max cut: 25mm | Hardened steel"},{"name": "Ratchet Secateur", "specs": "Max cut: 25mm | Ratchet mechanism"}]},
-    {"name": "Bypass Pruner", "category": "Garden Equipment", "description": "Professional bypass pruner for clean cuts on live wood and green stems.",
-     "benefits": ["Clean cuts on live branches", "Precision-ground blade for smooth operation", "Spring-loaded for easy repeated use"],
-     "models": [{"name": "Standard Bypass Pruner", "specs": "Max cut: 20mm | Steel | Spring-loaded"},{"name": "Professional Bypass Pruner", "specs": "Max cut: 25mm | Teflon coated"}]},
-    {"name": "Anvil Pruner", "category": "Garden Equipment", "description": "Robust anvil pruner designed for cutting dry and dead wood with extra force.",
-     "benefits": ["Extra cutting force for dry and dead wood", "Ratchet mechanism reduces effort", "Durable build for heavy use"],
-     "models": [{"name": "Standard Anvil Pruner", "specs": "Max cut: 22mm | Carbon steel"},{"name": "Ratchet Anvil Pruner", "specs": "Max cut: 28mm | 3-step ratchet"}]},
+     "models": [{"name": "Bypass Secateur", "specs": "Max cut: 20mm | SK5 steel | Ergonomic"},{"name": "Anvil Secateur", "specs": "Max cut: 25mm | Hardened steel"},{"name": "Ratchet Secateur", "specs": "Max cut: 25mm | Ratchet mechanism"},{"name": "Bypass Pruner", "specs": "Max cut: 20mm | Precision-ground blade | Spring-loaded"},{"name": "Anvil Pruner", "specs": "Max cut: 28mm | Ratchet mechanism | For dry & dead wood"}]},
     {"name": "Hedge Shear", "category": "Garden Equipment", "description": "Long-handled hedge shear for trimming and shaping hedges with precision.",
      "benefits": ["Even trimming for neat hedge appearance", "Long handles for comfortable reach", "Precision blades for clean cuts"],
      "models": [{"name": "Standard Hedge Shear", "specs": "8 inch blade | Steel | Wooden handle"},{"name": "Wavy Blade Hedge Shear", "specs": "10 inch | Wavy blade | Non-slip"},{"name": "Telescopic Hedge Shear", "specs": "Adjustable length | Lightweight"}]},
@@ -369,17 +361,26 @@ CONTACT_INFO = {
 CATEGORIES = ["Farm Machinery", "Garden Equipment", "Agricultural Inputs", "Greenhouse", "Irrigation", "Miscellaneous"]
 
 async def seed_products():
-    # Always re-seed to update images and data
     await db.products.drop()
     products_to_insert = []
+
+    # Special model image mappings
+    model_images = {
+        "Grafting Knife Model 1": "/products/grafting_knife_model_1.png",
+        "Grafting Knife Model 2": "/products/grafting_knife_model_2.png",
+        "Bypass Pruner": "/products/bypass_pruner.png",
+        "Anvil Pruner": "/products/anvil_pruner.png",
+    }
+
     for p in PRODUCTS_DATA:
         img = IMG.get(p["name"], "/products/bund_maker.png")
         is_popular = p["name"] in POPULAR_NAMES
         models_with_img = []
         for m in p.get("models", []):
+            m_img = model_images.get(m["name"], img)
             models_with_img.append({
                 "name": m["name"],
-                "image": img,
+                "image": m_img,
                 "specs": m.get("specs", "")
             })
         products_to_insert.append({
@@ -393,7 +394,7 @@ async def seed_products():
             "models": models_with_img
         })
     await db.products.insert_many(products_to_insert)
-    logging.info(f"Seeded {len(products_to_insert)} products with real images")
+    logging.info(f"Seeded {len(products_to_insert)} products")
 
 @app.on_event("startup")
 async def startup():

@@ -58,7 +58,7 @@ export default function Footer() {
             {/* Social */}
             <div className="flex items-center gap-4 pt-2">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/navyaenterprises.agri/"
                 target="_blank"
                 rel="noopener noreferrer"
                 data-testid="footer-instagram"
@@ -67,7 +67,7 @@ export default function Footer() {
                 <Instagram size={18} className="text-sage" />
               </a>
               <a
-                href="https://youtube.com"
+                href="https://youtube.com/@navyaenterprises-c3n6v?si=FFYekcCTvUc-4f5G"
                 target="_blank"
                 rel="noopener noreferrer"
                 data-testid="footer-youtube"

@@ -50,3 +50,16 @@ main {
 .carousel-btn:hover {
     transform: scale(1.1);
 }
+
+/* Infinite marquee for brands */
+@keyframes marquee-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.brands-marquee {
+    animation: marquee-scroll 25s linear infinite;
+    width: max-content;
+}
+.brands-marquee:hover {
+    animation-play-state: paused;
+}

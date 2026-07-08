@@ -60,7 +60,7 @@ module.exports = {
                 },
                 fontFamily: {
                         heading: ['"Poppins"', 'sans-serif'],
-                        accent: ['"Bodoni Moda"', 'serif'],
+                        accent: ['"Times New Roman"', 'serif'],
                         body: ['"Inter"', 'sans-serif'],
                 },
                 keyframes: {

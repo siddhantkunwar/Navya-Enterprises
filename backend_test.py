@@ -86,19 +86,35 @@ class NavyaAPITester:
             "GET",
             "api/products",
             200,
-            expected_count=70  # Expecting at least 70 products
+            expected_count=72  # Expecting exactly 72 products
         )
         if success and isinstance(response, list):
             print(f"   📊 Total products found: {len(response)}")
-            # Check if products have required fields
+            if len(response) == 72:
+                print(f"   ✅ Correct count: exactly 72 products")
+            else:
+                print(f"   ⚠️  Expected 72 products, got {len(response)}")
+            
+            # Check if products have required fields and real images
             if response:
                 sample_product = response[0]
-                required_fields = ['id', 'name', 'category', 'description', 'image']
+                required_fields = ['id', 'name', 'category', 'description', 'image', 'benefits']
                 missing_fields = [field for field in required_fields if field not in sample_product]
                 if missing_fields:
                     print(f"   ⚠️  Missing fields in product: {missing_fields}")
                 else:
                     print(f"   ✅ Product structure is valid")
+                
+                # Check if all products have real image paths (not unsplash)
+                products_with_real_images = [p for p in response if p.get('image', '').startswith('/products/')]
+                products_with_placeholder = [p for p in response if 'unsplash' in p.get('image', '')]
+                print(f"   📊 Products with real images: {len(products_with_real_images)}/{len(response)}")
+                if products_with_placeholder:
+                    print(f"   ⚠️  Found {len(products_with_placeholder)} products with placeholder images")
+                    for p in products_with_placeholder[:3]:  # Show first 3
+                        print(f"      - {p.get('name')}: {p.get('image')}")
+                else:
+                    print(f"   ✅ All products have real image paths")
         return success
 
     def test_get_categories(self):
@@ -142,10 +158,24 @@ class NavyaAPITester:
             "GET",
             "api/products?popular=true",
             200,
-            expected_count=5  # Expecting at least 5 popular products
+            expected_count=10  # Expecting exactly 10 popular products
         )
+        
+        # Expected popular product names
+        expected_popular = [
+            "Rotavator", "Power Sprayer", "Lawn Mower", "Vermibeds",
+            "Nursery Bags", "Vermicompost", "Small Greenhouse",
+            "Rain Guns", "Drip Irrigation", "Snake Rescue Kit"
+        ]
+        
         if success and isinstance(response, list):
             print(f"   📊 Popular products found: {len(response)}")
+            
+            if len(response) == 10:
+                print(f"   ✅ Correct count: exactly 10 popular products")
+            else:
+                print(f"   ⚠️  Expected 10 popular products, got {len(response)}")
+            
             # Verify all products are marked as popular
             if response:
                 non_popular = [p for p in response if not p.get('popular', False)]
@@ -153,6 +183,20 @@ class NavyaAPITester:
                     print(f"   ⚠️  Found {len(non_popular)} products not marked as popular")
                 else:
                     print(f"   ✅ All products are correctly marked as popular")
+                
+                # Check if the popular products match the expected list
+                actual_names = [p.get('name') for p in response]
+                missing_products = [name for name in expected_popular if name not in actual_names]
+                extra_products = [name for name in actual_names if name not in expected_popular]
+                
+                if missing_products:
+                    print(f"   ⚠️  Missing expected popular products: {missing_products}")
+                if extra_products:
+                    print(f"   ⚠️  Unexpected popular products: {extra_products}")
+                if not missing_products and not extra_products:
+                    print(f"   ✅ All popular products match the expected list")
+                
+                print(f"   📋 Popular products: {', '.join(actual_names)}")
         return success
 
     def test_get_single_product(self):
@@ -173,9 +217,25 @@ class NavyaAPITester:
                     if success and isinstance(product_data, dict):
                         print(f"   ✅ Product name: {product_data.get('name', 'N/A')}")
                         print(f"   ✅ Product category: {product_data.get('category', 'N/A')}")
-                        # Check if models are present
+                        
+                        # Check if benefits array is present
+                        benefits = product_data.get('benefits', [])
+                        print(f"   📊 Product benefits: {len(benefits)}")
+                        if benefits:
+                            print(f"   ✅ Benefits array present with {len(benefits)} items")
+                        else:
+                            print(f"   ⚠️  No benefits found for this product")
+                        
+                        # Check if models are present (should still be there in backend data)
                         models = product_data.get('models', [])
                         print(f"   📊 Product models: {len(models)}")
+                        
+                        # Check image path
+                        image = product_data.get('image', '')
+                        if image.startswith('/products/'):
+                            print(f"   ✅ Real image path: {image}")
+                        else:
+                            print(f"   ⚠️  Image path: {image}")
                     return success
                 else:
                     print("❌ No products available to test single product endpoint")

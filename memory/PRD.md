@@ -89,6 +89,14 @@ Build a showcase/catalogue website for Navya Enterprises, an agricultural equipm
 - [x] Sub-product page: Now shows product description (2-3 lines) + Key Benefits (2-3 bullet pointers)
 - [x] Product images use object-contain for proper aspect ratio display
 
+### Iteration 8 - Brands Marquee, Social Links & Product Restructuring (Jul 2026)
+- [x] Brands section: Infinite auto-scrolling marquee loop (CSS animation, pauses on hover)
+- [x] Social links updated: Instagram (navyaenterprises.agri) & YouTube (navyaenterprises-c3n6v)
+- [x] Bypass Pruner & Anvil Pruner removed as standalone products, added as variants under Secateur (5 total variants with own images)
+- [x] Grafting Knife: Added Model 1 & Model 2 variants with grafting_knife_model_1.png and grafting_knife_model_2.png
+- [x] Sub-product page: Re-added "Product Variants" section to show model variants with images
+- [x] Total products: 70 (down from 72)
+
 ## Prioritized Backlog
 ### P0 (Critical - Next)
 - Replace dummy images with actual product images (ZIP upload pending from client)

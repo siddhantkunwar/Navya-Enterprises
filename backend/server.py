@@ -209,7 +209,7 @@ PRODUCTS_DATA = [
      "models": [{"name": "Plain Sickle", "specs": "Smooth edge | Carbon steel | Light"},{"name": "Serrated Sickle", "specs": "Serrated edge | Stainless steel"}]},
     {"name": "Secateur", "category": "Garden Equipment", "description": "High-quality secateur for precise pruning of stems and branches up to 25mm diameter.",
      "benefits": ["Clean bypass cuts for healthy plant growth", "Ergonomic handle reduces hand strain", "Hardened steel blades for long life"],
-     "models": [{"name": "Anvil Secateur", "specs": "Max cut: 25mm | Hardened steel"},{"name": "Ratchet Secateur", "specs": "Max cut: 25mm | Ratchet mechanism"},{"name": "Bypass Pruner", "specs": "Max cut: 20mm | Precision-ground blade | Spring-loaded"},{"name": "Anvil Pruner", "specs": "Max cut: 28mm | Ratchet mechanism | For dry & dead wood"}]},
+     "models": [{"name": "Ratchet Secateur", "specs": "Max cut: 25mm | Ratchet mechanism"},{"name": "Bypass Pruner", "specs": "Max cut: 20mm | Precision-ground blade | Spring-loaded"},{"name": "Anvil Pruner", "specs": "Max cut: 28mm | Ratchet mechanism | For dry & dead wood"}]},
     {"name": "Hedge Shear", "category": "Garden Equipment", "description": "Long-handled hedge shear for trimming and shaping hedges with precision.",
      "benefits": ["Even trimming for neat hedge appearance", "Long handles for comfortable reach", "Precision blades for clean cuts"],
      "models": [{"name": "Standard Hedge Shear", "specs": "8 inch blade | Steel | Wooden handle"},{"name": "Wavy Blade Hedge Shear", "specs": "10 inch | Wavy blade | Non-slip"},{"name": "Telescopic Hedge Shear", "specs": "Adjustable length | Lightweight"}]},

@@ -76,6 +76,19 @@ Build a showcase/catalogue website for Navya Enterprises, an agricultural equipm
 - [x] Connect page: "Business Name"/"Navya Enterprises" → "Point of Contact"/"Vinay Gupta"
 - [x] Connect page: Business timing changed to 11:00 AM, website section removed
 
+### Iteration 6 - Logo, Nav & Font (Jul 2026)
+- [x] Logo reduced 1.5x (h-[127px]) for better proportions
+- [x] Nav buttons increased 2x (px-8 py-4 text-base font-bold)
+- [x] "Connect" renamed to "Connect With Us"
+
+### Iteration 7 - Real Product Images, Font & Sub-product Redesign (Jul 2026)
+- [x] All italic accent keywords changed from Bodoni Moda to Times New Roman Italic
+- [x] Popular products updated to exactly 10 specific products with real images
+- [x] ALL 72 products now use real product images from uploaded ZIP files
+- [x] Sub-product page: Removed "Why Choose This Product" and "Available Models & Variants"
+- [x] Sub-product page: Now shows product description (2-3 lines) + Key Benefits (2-3 bullet pointers)
+- [x] Product images use object-contain for proper aspect ratio display
+
 ## Prioritized Backlog
 ### P0 (Critical - Next)
 - Replace dummy images with actual product images (ZIP upload pending from client)

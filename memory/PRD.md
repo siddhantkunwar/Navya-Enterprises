@@ -97,17 +97,23 @@ Build a showcase/catalogue website for Navya Enterprises, an agricultural equipm
 - [x] Sub-product page: Re-added "Product Variants" section to show model variants with images
 - [x] Total products: 70 (down from 72)
 
+### Iteration 8 - Vercel Deployment & SEO (Feb 2026)
+- [x] Created `vercel.json` with SPA rewrites for React Router deep links
+- [x] Verified `package.json` build script works for Vercel (craco build)
+- [x] Added comprehensive SEO meta tags: title, description, keywords, author, canonical
+- [x] Added Open Graph tags (og:title, og:description, og:image, og:url, og:site_name)
+- [x] Added Twitter Card tags (summary_large_image)
+- [x] Set favicon and apple-touch-icon to Navya logo
+- [x] Updated theme-color to brand green #2E7D32
+- [x] robots meta set to index, follow
+- [x] Production build verified — no errors
+
 ## Prioritized Backlog
-### P0 (Critical - Next)
-- Replace dummy images with actual product images (ZIP upload pending from client)
-- Replace brand logos with actual partner brand logos
-- Update social media links (Instagram, YouTube) with actual URLs
 
 ### P1 (Important)
 - Add WhatsApp contact button
 - Product inquiry form on product detail page
 - Product search with suggestions/autocomplete
-- SEO meta tags for all pages
 
 ### P2 (Nice to Have)
 - Image gallery/multiple images per product
@@ -120,3 +126,7 @@ Build a showcase/catalogue website for Navya Enterprises, an agricultural equipm
 - Online payment integration
 - User accounts & order history
 - Inventory management admin panel
+
+## Deployment Notes
+- **Vercel**: Push the `frontend/` directory. `vercel.json` handles SPA rewrites. Build command: `yarn build` (or `craco build`). Output dir: `build/`.
+- **OG Image**: After deploying, update `og:image` and `og:url` meta tags in `index.html` with the production domain (replace `https://navyaenterprises.com` and relative image path with absolute URL).

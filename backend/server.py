@@ -47,9 +47,9 @@ class ContactInfo(BaseModel):
 # Image mapping: product name -> image filename
 IMG = {
     "Bund Maker": "/products/bund_maker.png",
-    "Seed Drill": "/products/seed_drill.png",
-    "Rotavator": "/products/rotavator.png",
-    "Cultivator": "/products/cultivator.png",
+    "Seed Drill": "/products/seed_drill.webp",
+    "Rotavator": "/products/rotavator.webp",
+    "Cultivator": "/products/cultivator.webp",
     "Power Weeder": "/products/power_weeder.png",
     "Earth Auger": "/products/earth_auger.png",
     "Disc Plough": "/products/disc_redger_plough.png",

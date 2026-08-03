@@ -9,6 +9,7 @@ Build a showcase/catalogue website for Navya Enterprises, an agricultural equipm
 - **Database**: MongoDB - products collection with 72 products across 6 categories
 - **Fonts**: Cormorant Garamond (headings) + Outfit (body)
 - **Brand Colors**: Soft Sage Green #AAB696, Dark Olive Green #38443B, Earthy Brown #6B3F34, Deep Forest Green #4B5D44
+- **Deployment**: Vercel (frontend), Emergent preview (backend)
 
 ## User Personas
 - **Agricultural professionals** looking for equipment and supplies
@@ -24,89 +25,60 @@ Build a showcase/catalogue website for Navya Enterprises, an agricultural equipm
 5. Product filtering by category (button + sidebar checkbox)
 6. Connect page = info display only (NOT a form)
 7. No founder description on About page
-8. Dummy/placeholder images (to be replaced with real images later)
 
-## What's Been Implemented (Jan 2026)
+## What's Been Implemented
+
+### Initial Build (Jan 2026)
 - [x] Full 5-page website matching wireframe layouts
 - [x] Header with Navya logo + navigation (Home, About Us, Products, Connect)
 - [x] Footer with company info, quick links, Instagram & YouTube social links
 - [x] Home Page: Hero image, Brief About section, Popular Products carousel, Brands carousel, Testimonials
-- [x] About Us Page: Business Strategy & Vision (generalized heading), About Our Firm, Product Range
+- [x] About Us Page: Business Strategy & Vision, About Our Firm, Product Range
 - [x] Products Page: Hero, search bar, category button filters, sidebar checkbox filters, 4-column product grid (72 products)
 - [x] Product Detail Page: Back button, product image + description, model variants section
-- [x] Connect Page: Hero, Get In Touch info display (Name, Mobile, Location, Business Timing, Email, Website), Google Maps embed
+- [x] Connect Page: Hero, Get In Touch info display, Google Maps embed
 - [x] All products seeded from catalogue with descriptions, categories, and model variants
 - [x] Backend API endpoints for products, categories, and contact info
 - [x] Responsive design with mobile navigation
 - [x] Brand color palette strictly applied throughout
 - [x] 100% test pass rate (backend, frontend, integration)
 
-### Iteration 2 - Home Page Refinements (Jan 2026)
+### Home Page Refinements (Jan 2026)
 - [x] Header changed to white bg for logo contrast
-- [x] Logo size increased 5x (both header h-[160px] and footer)
-- [x] Font changed to Playfair Display (headings) + Lato (body) per reference image
+- [x] Logo size increased (header h-[127px])
+- [x] Font changed to Playfair Display (headings) + Lato (body) per reference
 - [x] Hero image replaced with client-provided field image
-- [x] Tagline changed to "Built for the fields that feed the future."
-- [x] Small headings removed (About Us, Featured, Our Partners, Testimonials)
-- [x] Real brand logos added from ZIP (Stihl, Tata, M&M, Aspee, Falcon, Neptune, OleoMac, Concorde, MaxGreen)
+- [x] Tagline: "Built for the fields that feed the future."
+- [x] Infinite CSS marquee for brand partner logos
+- [x] Smart back button with route state passing
 
-### Iteration 3 - Font & Slider Refinements (Jan 2026)
-- [x] Logo trimmed (removed whitespace padding) for clear visibility in compact header (h-16)
-- [x] Fonts changed to: Poppins (Extra Bold) headings, Bodoni Moda (Italic) accent keywords, Inter (Regular) body
-- [x] Dual-font style: accent keywords ("fields", "future", "Excellence", "Products", etc.) in Bodoni Moda italic
-- [x] Arrow buttons replaced with sleek embla-carousel dot slider indicators
-- [x] Brand logos increased 3x to w-52 h-52 (208px)
+### Real Product Images (Jan 2026)
+- [x] Uploaded and mapped .webp images for Rotavator, Seed Drill, Cultivator
+- [x] Cleaned up product variant arrays for non-variant products
 
-### Iteration 4 - Logo, Back Button, About Page (Jan 2026)
-- [x] New logo image (black bg) processed to transparent bg, trimmed, and applied to header + footer
-- [x] Popular products on homepage: category labels removed, only product name shown
-- [x] Smart back button on product detail page: "Back to Home" from homepage, "Back to Products" from products page (React Router state-based)
-- [x] About Us tagline: "Supporting agriculture that's built to last" with "Supporting" & "last" as Bodoni Moda accents
-- [x] About Us: Removed short headings "Our Approach", "Our Story", "What We Offer" sub-label
-- [x] "Our Product Range" renamed to "What We Offer" with Bodoni Moda accent style
-- [x] Under "What We Offer": Shortened text + 3 service bullet points (Quality products, Dedicated after-sales, Own product range)
-
-### Iteration 5 - Multi-page Refinements (Jan 2026)
-- [x] Logo size increased 3x to h-[190px] in header and footer
-- [x] Popular product cards 3x bigger (w-80 width, h-64 image height)
-- [x] About page "What We Offer": Category bullet list removed
-- [x] Products page tagline: "Equipment that earns its place in the field." with accent keywords
-- [x] Products page: Left sidebar filter removed entirely, only category button filters kept
-- [x] Connect page: "Contact Details" heading removed
-- [x] Connect page: "Business Name"/"Navya Enterprises" → "Point of Contact"/"Vinay Gupta"
-- [x] Connect page: Business timing changed to 11:00 AM, website section removed
-
-### Iteration 6 - Logo, Nav & Font (Jul 2026)
-- [x] Logo reduced 1.5x (h-[127px]) for better proportions
-- [x] Nav buttons increased 2x (px-8 py-4 text-base font-bold)
-- [x] "Connect" renamed to "Connect With Us"
-
-### Iteration 7 - Real Product Images, Font & Sub-product Redesign (Jul 2026)
-- [x] All italic accent keywords changed from Bodoni Moda to Times New Roman Italic
-- [x] Popular products updated to exactly 10 specific products with real images
-- [x] ALL 72 products now use real product images from uploaded ZIP files
-- [x] Sub-product page: Removed "Why Choose This Product" and "Available Models & Variants"
-- [x] Sub-product page: Now shows product description (2-3 lines) + Key Benefits (2-3 bullet pointers)
-- [x] Product images use object-contain for proper aspect ratio display
-
-### Iteration 8 - Brands Marquee, Social Links & Product Restructuring (Jul 2026)
-- [x] Brands section: Infinite auto-scrolling marquee loop (CSS animation, pauses on hover)
-- [x] Social links updated: Instagram (navyaenterprises.agri) & YouTube (navyaenterprises-c3n6v)
-- [x] Bypass Pruner & Anvil Pruner removed as standalone products, added as variants under Secateur (5 total variants with own images)
-- [x] Grafting Knife: Added Model 1 & Model 2 variants with grafting_knife_model_1.png and grafting_knife_model_2.png
-- [x] Sub-product page: Re-added "Product Variants" section to show model variants with images
-- [x] Total products: 70 (down from 72)
-
-### Iteration 8 - Vercel Deployment & SEO (Feb 2026)
+### Vercel Deployment & SEO (Feb 2026)
 - [x] Created `vercel.json` with SPA rewrites for React Router deep links
-- [x] Verified `package.json` build script works for Vercel (craco build)
-- [x] Added comprehensive SEO meta tags: title, description, keywords, author, canonical
-- [x] Added Open Graph tags (og:title, og:description, og:image, og:url, og:site_name)
-- [x] Added Twitter Card tags (summary_large_image)
-- [x] Set favicon and apple-touch-icon to Navya logo
-- [x] Updated theme-color to brand green #2E7D32
+- [x] Added `.npmrc` with `legacy-peer-deps=true` for npm compatibility
+- [x] Added `.nvmrc` pinning Node.js to v20
+- [x] Added `engines` field in package.json for Node 20
+- [x] Added `ajv@8.17.1` as explicit dependency (fixes CRA build on Vercel)
+- [x] Comprehensive SEO meta tags: title, description, keywords, author, canonical
+- [x] Open Graph tags (og:title, og:description, og:image, og:url, og:site_name)
+- [x] Twitter Card tags (summary_large_image)
+- [x] Favicon and apple-touch-icon set to Navya logo
+- [x] Theme-color updated to brand green #2E7D32
 - [x] robots meta set to index, follow
-- [x] Production build verified — no errors
+
+### Deployment Bug Fixes (Feb 2026)
+- [x] Fixed `ScrollToTop` component — replaced `require("react-router-dom")` with proper ESM import (was crashing React in production builds, causing blank page)
+- [x] Guarded `emergent-main.js` script to only load on emergentagent.com domains
+- [x] Successfully deployed to Vercel
+
+## Deployment Notes
+- **Vercel**: Root directory = `frontend/`. `vercel.json` handles SPA rewrites. Build: `yarn build`. Output: `build/`.
+- **Environment Variable on Vercel**: `REACT_APP_BACKEND_URL` = `https://agri-layout-preview.preview.emergentagent.com`
+- **OG Image**: After custom domain setup, update `og:image`, `og:url`, and `canonical` in `index.html` with production domain absolute URLs.
+- **Node Version**: Set `NODE_VERSION=20` in Vercel env vars.
 
 ## Prioritized Backlog
 
@@ -126,7 +98,3 @@ Build a showcase/catalogue website for Navya Enterprises, an agricultural equipm
 - Online payment integration
 - User accounts & order history
 - Inventory management admin panel
-
-## Deployment Notes
-- **Vercel**: Push the `frontend/` directory. `vercel.json` handles SPA rewrites. Build command: `yarn build` (or `craco build`). Output dir: `build/`.
-- **OG Image**: After deploying, update `og:image` and `og:url` meta tags in `index.html` with the production domain (replace `https://navyaenterprises.com` and relative image path with absolute URL).

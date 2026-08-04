@@ -1,10 +1,8 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
-import axios from "axios";
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+import { POPULAR_PRODUCTS } from "@/data/products";
 
 const HERO_IMG = "https://customer-assets.emergentagent.com/job_agri-layout-preview/artifacts/3eyqyo7h_hero%20image%20for%20home%20page.png";
 
@@ -138,11 +136,7 @@ function AccentHeading({ children }) {
 }
 
 export default function HomePage() {
-  const [popularProducts, setPopularProducts] = useState([]);
-
-  useEffect(() => {
-    axios.get(`${API}/products?popular=true`).then((r) => setPopularProducts(r.data)).catch(console.error);
-  }, []);
+  const popularProducts = POPULAR_PRODUCTS;
 
   return (
     <div data-testid="home-page">

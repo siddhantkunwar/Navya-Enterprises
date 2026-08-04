@@ -1,32 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import HeroSection from "@/components/HeroSection";
 import { Search } from "lucide-react";
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+import { PRODUCTS, CATEGORIES } from "@/data/products";
 const HERO_IMG = "https://images.unsplash.com/photo-1774351128444-9f2bd99f71ed?w=1400&h=600&fit=crop";
 
 export default function ProductsPage() {
-  const [products, setProducts] = useState([]);
-  const [categories, setCategories] = useState([]);
+  const products = PRODUCTS;
+  const categories = CATEGORIES;
   const [activeCategory, setActiveCategory] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    Promise.all([
-      axios.get(`${API}/products`),
-      axios.get(`${API}/products/categories`),
-    ]).then(([pRes, cRes]) => {
-      setProducts(pRes.data);
-      setCategories(cRes.data);
-      setLoading(false);
-    }).catch((e) => {
-      console.error(e);
-      setLoading(false);
-    });
-  }, []);
+  const loading = false;
 
   const handleCategoryButton = (cat) => {
     setActiveCategory(activeCategory === cat ? null : cat);

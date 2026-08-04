@@ -1,32 +1,15 @@
-import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
-import axios from "axios";
 import { ArrowLeft, CheckCircle } from "lucide-react";
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+import { getProductById } from "@/data/products";
 
 export default function ProductDetailPage() {
   const { productId } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
-  const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const product = getProductById(productId);
 
   const cameFrom = location.state?.from || null;
   const backLabel = cameFrom === "/" ? "Back to Home" : "Back to Products";
-
-  useEffect(() => {
-    axios
-      .get(`${API}/products/${productId}`)
-      .then((r) => {
-        setProduct(r.data);
-        setLoading(false);
-      })
-      .catch((e) => {
-        console.error(e);
-        setLoading(false);
-      });
-  }, [productId]);
 
   const handleBack = () => {
     if (cameFrom) {
@@ -35,14 +18,6 @@ export default function ProductDetailPage() {
       navigate(-1);
     }
   };
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="w-10 h-10 border-3 border-sage border-t-olive rounded-full animate-spin" />
-      </div>
-    );
-  }
 
   if (!product) {
     return (

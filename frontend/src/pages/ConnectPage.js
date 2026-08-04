@@ -1,25 +1,10 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
 import HeroSection from "@/components/HeroSection";
 import { User, Phone, MapPin, Clock, Mail } from "lucide-react";
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+import { CONTACT_INFO } from "@/data/contact";
 const HERO_IMG = "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1400&h=600&fit=crop";
 
 export default function ConnectPage() {
-  const [contact, setContact] = useState(null);
-
-  useEffect(() => {
-    axios.get(`${API}/contact-info`).then((r) => setContact(r.data)).catch(console.error);
-  }, []);
-
-  if (!contact) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="w-10 h-10 border-3 border-sage border-t-olive rounded-full animate-spin" />
-      </div>
-    );
-  }
+  const contact = CONTACT_INFO;
 
   const infoItems = [
     { icon: User, label: "Point of Contact", value: "Vinay Gupta" },

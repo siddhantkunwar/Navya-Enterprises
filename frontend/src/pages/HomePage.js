@@ -4,7 +4,7 @@ import { ArrowRight, CheckCircle } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import { POPULAR_PRODUCTS } from "@/data/products";
 
-const HERO_IMG = "https://customer-assets.emergentagent.com/job_agri-layout-preview/artifacts/3eyqyo7h_hero%20image%20for%20home%20page.png";
+const HERO_IMG = "/hero-home.webp";
 
 const BRAND_LOGOS = [
   { name: "Stihl", img: "/brands/stihl.png" },

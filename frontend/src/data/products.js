@@ -5,7 +5,7 @@ export const PRODUCTS = [
     "name": "Bund Maker",
     "category": "Farm Machinery",
     "description": "Heavy-duty bund maker designed for efficient land leveling and water management in agricultural fields. Ideal for creating precise bunds and ridges.",
-    "image": "/products/bund_maker.png",
+    "image": "/products/bund_maker.webp",
     "popular": false,
     "benefits": [
       "Efficient land leveling and water management",
@@ -61,7 +61,7 @@ export const PRODUCTS = [
     "name": "Power Weeder",
     "category": "Farm Machinery",
     "description": "Compact and efficient power weeder for inter-row weeding operations. Reduces manual labor and improves weeding efficiency in row crops.",
-    "image": "/products/power_weeder.png",
+    "image": "/products/power_weeder.webp",
     "popular": false,
     "benefits": [
       "Reduces manual weeding labor significantly",
@@ -75,7 +75,7 @@ export const PRODUCTS = [
     "name": "Earth Auger",
     "category": "Farm Machinery",
     "description": "Powerful earth auger for digging holes for tree planting, fencing, and foundation work. Quick and efficient drilling in various soil conditions.",
-    "image": "/products/earth_auger.png",
+    "image": "/products/earth_auger.webp",
     "popular": false,
     "benefits": [
       "Fast hole digging for planting and fencing",
@@ -89,7 +89,7 @@ export const PRODUCTS = [
     "name": "Disc Plough",
     "category": "Farm Machinery",
     "description": "Robust disc plough for primary tillage in hard and stony soils. Excellent for turning and inverting soil with minimal clogging.",
-    "image": "/products/disc_redger_plough.png",
+    "image": "/products/disc_redger_plough.webp",
     "popular": false,
     "benefits": [
       "Handles hard and stony soils effectively",
@@ -103,7 +103,7 @@ export const PRODUCTS = [
     "name": "Brush Cutter",
     "category": "Farm Machinery",
     "description": "Versatile brush cutter for clearing thick grass, weeds, and light brush. Essential for maintaining farm boundaries and clearing overgrown areas.",
-    "image": "/products/brush_cutter.png",
+    "image": "/products/brush_cutter.webp",
     "popular": false,
     "benefits": [
       "Clears thick grass and weeds efficiently",
@@ -117,7 +117,7 @@ export const PRODUCTS = [
     "name": "Bio Thresher",
     "category": "Farm Machinery",
     "description": "Efficient bio thresher for separating grain from stalks and husks. Suitable for various crops with adjustable speed and output settings.",
-    "image": "/products/bio_thresher.png",
+    "image": "/products/bio_thresher.webp",
     "popular": false,
     "benefits": [
       "Separates grain cleanly with minimal loss",
@@ -131,7 +131,7 @@ export const PRODUCTS = [
     "name": "Power Sprayer",
     "category": "Farm Machinery",
     "description": "High-pressure power sprayer for uniform application of pesticides, herbicides, and fertilizers. Ensures effective crop protection with minimal wastage.",
-    "image": "/products/power_sprayer.png",
+    "image": "/products/power_sprayer.webp",
     "popular": true,
     "benefits": [
       "Uniform spray coverage reduces chemical wastage",
@@ -145,7 +145,7 @@ export const PRODUCTS = [
     "name": "Fertilizer Broadcaster",
     "category": "Farm Machinery",
     "description": "Precision fertilizer broadcaster for even distribution of granular fertilizers across fields. Adjustable spread pattern and application rate.",
-    "image": "/products/fertilizer_broadcaster.png",
+    "image": "/products/fertilizer_broadcaster.webp",
     "popular": false,
     "benefits": [
       "Even fertilizer distribution across fields",
@@ -159,7 +159,7 @@ export const PRODUCTS = [
     "name": "Powder Duster",
     "category": "Farm Machinery",
     "description": "Effective powder duster for application of dry pesticide and fungicide powders. Lightweight and easy to operate for crop protection.",
-    "image": "/products/powder_duster.png",
+    "image": "/products/powder_duster.webp",
     "popular": false,
     "benefits": [
       "Effective dry powder application",
@@ -173,7 +173,7 @@ export const PRODUCTS = [
     "name": "Chainsaw",
     "category": "Garden Equipment",
     "description": "Professional-grade chainsaw for efficient tree felling, pruning, and wood cutting. Equipped with anti-vibration system for comfortable operation.",
-    "image": "/products/chainsaw.png",
+    "image": "/products/chainsaw.webp",
     "popular": false,
     "benefits": [
       "Powerful cutting for trees and heavy wood",
@@ -187,7 +187,7 @@ export const PRODUCTS = [
     "name": "Tree Pruner",
     "category": "Garden Equipment",
     "description": "Telescopic tree pruner for high-reach pruning without ladders. Sharp blades ensure clean cuts for healthy tree maintenance.",
-    "image": "/products/tree_pruner.png",
+    "image": "/products/tree_pruner.webp",
     "popular": false,
     "benefits": [
       "Reach high branches without a ladder",
@@ -201,7 +201,7 @@ export const PRODUCTS = [
     "name": "Wheelbarrow",
     "category": "Garden Equipment",
     "description": "Sturdy wheelbarrow for transporting soil, compost, plants, and garden materials. Ergonomic design with pneumatic tire for easy maneuverability.",
-    "image": "/products/wheel_barrow.png",
+    "image": "/products/wheel_barrow.webp",
     "popular": false,
     "benefits": [
       "Heavy load capacity for garden materials",
@@ -215,7 +215,7 @@ export const PRODUCTS = [
     "name": "Hedge Trimmer",
     "category": "Garden Equipment",
     "description": "Powerful hedge trimmer for shaping and maintaining hedges, shrubs, and ornamental plants with precision and ease.",
-    "image": "/products/hedge_trimmer.png",
+    "image": "/products/hedge_trimmer.webp",
     "popular": false,
     "benefits": [
       "Precision cutting for neat hedge shapes",
@@ -229,7 +229,7 @@ export const PRODUCTS = [
     "name": "Lawn Mower",
     "category": "Garden Equipment",
     "description": "Efficient lawn mower for maintaining a well-groomed lawn. Adjustable cutting height and collection bag for a clean finish.",
-    "image": "/products/lawn_mower.png",
+    "image": "/products/lawn_mower.webp",
     "popular": true,
     "benefits": [
       "Adjustable cutting height for different grass lengths",
@@ -243,7 +243,7 @@ export const PRODUCTS = [
     "name": "Shovel",
     "category": "Garden Equipment",
     "description": "Durable garden shovel for digging, lifting, and moving soil, compost, and other materials.",
-    "image": "/products/showel.png",
+    "image": "/products/showel.webp",
     "popular": false,
     "benefits": [
       "Strong steel blade for tough digging",
@@ -257,7 +257,7 @@ export const PRODUCTS = [
     "name": "Hoe",
     "category": "Garden Equipment",
     "description": "Versatile garden hoe for weeding, cultivating, and shaping soil. Essential hand tool for every gardener.",
-    "image": "/products/hoe.png",
+    "image": "/products/hoe.webp",
     "popular": false,
     "benefits": [
       "Effective for weeding and soil shaping",
@@ -271,7 +271,7 @@ export const PRODUCTS = [
     "name": "Bud Cutter",
     "category": "Garden Equipment",
     "description": "Precision bud cutter for clean cutting of plant buds and small stems. Essential for grafting and propagation.",
-    "image": "/products/bud_cutter.png",
+    "image": "/products/bud_cutter.webp",
     "popular": false,
     "benefits": [
       "Clean precise cuts for healthy propagation",
@@ -285,7 +285,7 @@ export const PRODUCTS = [
     "name": "Rake",
     "category": "Garden Equipment",
     "description": "Multi-purpose garden rake for leveling soil, removing debris, and preparing seedbeds.",
-    "image": "/products/rake.png",
+    "image": "/products/rake.webp",
     "popular": false,
     "benefits": [
       "Effective soil leveling and debris removal",
@@ -299,7 +299,7 @@ export const PRODUCTS = [
     "name": "Fork",
     "category": "Garden Equipment",
     "description": "Strong garden fork for loosening soil, turning compost, and digging root vegetables.",
-    "image": "/products/fork.png",
+    "image": "/products/fork.webp",
     "popular": false,
     "benefits": [
       "Loosens compacted soil effectively",
@@ -313,7 +313,7 @@ export const PRODUCTS = [
     "name": "Grafting Knife",
     "category": "Garden Equipment",
     "description": "Sharp grafting knife with precision blade for making clean cuts during grafting operations.",
-    "image": "/products/grafting_knife.png",
+    "image": "/products/grafting_knife.webp",
     "popular": false,
     "benefits": [
       "Precision blade for clean grafting cuts",
@@ -323,12 +323,12 @@ export const PRODUCTS = [
     "models": [
       {
         "name": "Variant 1",
-        "image": "/products/grafting_knife_model_1.png",
+        "image": "/products/grafting_knife_model_1.webp",
         "specs": "Professional grade | Ergonomic handle"
       },
       {
         "name": "Variant 2",
-        "image": "/products/grafting_knife_model_2.png",
+        "image": "/products/grafting_knife_model_2.webp",
         "specs": "Heavy duty | Multi-purpose blade"
       }
     ]
@@ -338,7 +338,7 @@ export const PRODUCTS = [
     "name": "Manual Weeder",
     "category": "Garden Equipment",
     "description": "Ergonomic hand weeder for removing weeds without disturbing surrounding plants.",
-    "image": "/products/manual_weeder.png",
+    "image": "/products/manual_weeder.webp",
     "popular": false,
     "benefits": [
       "Removes weeds from root level",
@@ -352,7 +352,7 @@ export const PRODUCTS = [
     "name": "Trowel",
     "category": "Garden Equipment",
     "description": "Essential garden trowel for planting, transplanting, and potting with comfortable grip.",
-    "image": "/products/trowel.png",
+    "image": "/products/trowel.webp",
     "popular": false,
     "benefits": [
       "Perfect for planting and transplanting",
@@ -366,7 +366,7 @@ export const PRODUCTS = [
     "name": "Sickle",
     "category": "Garden Equipment",
     "description": "Traditional sickle for harvesting crops and cutting grass with minimal effort.",
-    "image": "/products/sickle.png",
+    "image": "/products/sickle.webp",
     "popular": false,
     "benefits": [
       "Efficient grass and crop harvesting",
@@ -380,7 +380,7 @@ export const PRODUCTS = [
     "name": "Secateur",
     "category": "Garden Equipment",
     "description": "High-quality secateur for precise pruning of stems and branches up to 25mm diameter.",
-    "image": "/products/secateur.png",
+    "image": "/products/secateur.webp",
     "popular": false,
     "benefits": [
       "Clean bypass cuts for healthy plant growth",
@@ -390,17 +390,17 @@ export const PRODUCTS = [
     "models": [
       {
         "name": "Ratchet Secateur",
-        "image": "/products/secateur.png",
+        "image": "/products/secateur.webp",
         "specs": "Max cut: 25mm | Ratchet mechanism"
       },
       {
         "name": "Bypass Pruner",
-        "image": "/products/bypass_pruner.png",
+        "image": "/products/bypass_pruner.webp",
         "specs": "Max cut: 20mm | Precision-ground blade | Spring-loaded"
       },
       {
         "name": "Anvil Pruner",
-        "image": "/products/anvil_pruner.png",
+        "image": "/products/anvil_pruner.webp",
         "specs": "Max cut: 28mm | Ratchet mechanism | For dry & dead wood"
       }
     ]
@@ -410,7 +410,7 @@ export const PRODUCTS = [
     "name": "Hedge Shear",
     "category": "Garden Equipment",
     "description": "Long-handled hedge shear for trimming and shaping hedges with precision.",
-    "image": "/products/hedge_shear.png",
+    "image": "/products/hedge_shear.webp",
     "popular": false,
     "benefits": [
       "Even trimming for neat hedge appearance",
@@ -424,7 +424,7 @@ export const PRODUCTS = [
     "name": "Grafting Machine",
     "category": "Garden Equipment",
     "description": "Professional grafting machine for fast and consistent grafting with high success rates.",
-    "image": "/products/grafting_machine.png",
+    "image": "/products/grafting_machine.webp",
     "popular": false,
     "benefits": [
       "Consistent V/U/Omega cuts for high graft success",
@@ -438,7 +438,7 @@ export const PRODUCTS = [
     "name": "Nursery Bags",
     "category": "Garden Equipment",
     "description": "UV-stabilized nursery bags for plant propagation and seedling growth in various sizes.",
-    "image": "/products/nursery_bags.png",
+    "image": "/products/nursery_bags.webp",
     "popular": true,
     "benefits": [
       "UV-treated for extended outdoor durability",
@@ -452,7 +452,7 @@ export const PRODUCTS = [
     "name": "Flower Pots",
     "category": "Garden Equipment",
     "description": "Durable flower pots in various sizes and materials for indoor and outdoor gardening.",
-    "image": "/products/flower_pots.png",
+    "image": "/products/flower_pots.webp",
     "popular": false,
     "benefits": [
       "Drainage holes for healthy root growth",
@@ -466,7 +466,7 @@ export const PRODUCTS = [
     "name": "Grow Bags",
     "category": "Garden Equipment",
     "description": "Breathable grow bags for container gardening promoting air pruning for healthier plants.",
-    "image": "/products/grow_bags.png",
+    "image": "/products/grow_bags.webp",
     "popular": false,
     "benefits": [
       "Breathable fabric promotes root air pruning",
@@ -480,7 +480,7 @@ export const PRODUCTS = [
     "name": "Vermibeds",
     "category": "Garden Equipment",
     "description": "Ready-to-use vermibeds for efficient vermicomposting and organic compost production.",
-    "image": "/products/vermibed.png",
+    "image": "/products/vermibed.webp",
     "popular": true,
     "benefits": [
       "Produces high-quality organic compost",
@@ -494,7 +494,7 @@ export const PRODUCTS = [
     "name": "Lopping Shear",
     "category": "Garden Equipment",
     "description": "Long-reach lopping shear for cutting thick branches up to 50mm with reduced effort.",
-    "image": "/products/lopping_shear.png",
+    "image": "/products/lopping_shear.webp",
     "popular": false,
     "benefits": [
       "Cuts branches up to 50mm diameter",
@@ -508,7 +508,7 @@ export const PRODUCTS = [
     "name": "Vertical Garden",
     "category": "Garden Equipment",
     "description": "Modular vertical garden system for space-efficient gardening on walls and balconies.",
-    "image": "/products/vertical_garden.png",
+    "image": "/products/vertical_garden.webp",
     "popular": false,
     "benefits": [
       "Maximizes growing space in small areas",
@@ -522,7 +522,7 @@ export const PRODUCTS = [
     "name": "Root Trays",
     "category": "Garden Equipment",
     "description": "Specialized root trays for seedling propagation and easy transplanting.",
-    "image": "/products/root_tray.png",
+    "image": "/products/root_tray.webp",
     "popular": false,
     "benefits": [
       "Optimal cell design for root development",
@@ -536,7 +536,7 @@ export const PRODUCTS = [
     "name": "Bone Meal",
     "category": "Agricultural Inputs",
     "description": "Premium bone meal fertilizer rich in phosphorus and calcium for strong root development.",
-    "image": "/products/bone_meal.png",
+    "image": "/products/bone_meal.webp",
     "popular": false,
     "benefits": [
       "High phosphorus content for root strength",
@@ -550,7 +550,7 @@ export const PRODUCTS = [
     "name": "De-oiled Cakes",
     "category": "Agricultural Inputs",
     "description": "Organic de-oiled cakes for soil enrichment and natural pest deterrent.",
-    "image": "/products/de-oiled_cakes.png",
+    "image": "/products/de-oiled_cakes.webp",
     "popular": false,
     "benefits": [
       "Rich nitrogen source for plant growth",
@@ -564,7 +564,7 @@ export const PRODUCTS = [
     "name": "Blood Meal",
     "category": "Agricultural Inputs",
     "description": "High-nitrogen blood meal for fast-acting soil amendment and leafy plant growth.",
-    "image": "/products/blood_meal.png",
+    "image": "/products/blood_meal.webp",
     "popular": false,
     "benefits": [
       "Quick-release nitrogen boost",
@@ -578,7 +578,7 @@ export const PRODUCTS = [
     "name": "Vermicompost",
     "category": "Agricultural Inputs",
     "description": "Premium vermicompost rich in beneficial microorganisms for improved soil health.",
-    "image": "/products/vermicompost.png",
+    "image": "/products/vermicompost.webp",
     "popular": true,
     "benefits": [
       "Rich in plant-available nutrients",
@@ -592,7 +592,7 @@ export const PRODUCTS = [
     "name": "Manure",
     "category": "Agricultural Inputs",
     "description": "Well-decomposed organic manure for comprehensive soil conditioning and nutrient availability.",
-    "image": "/products/manure.png",
+    "image": "/products/manure.webp",
     "popular": false,
     "benefits": [
       "Improves soil structure and fertility",
@@ -606,7 +606,7 @@ export const PRODUCTS = [
     "name": "Cocopeat",
     "category": "Agricultural Inputs",
     "description": "Premium cocopeat growing medium with excellent water retention for seed starting and potting.",
-    "image": "/products/cocopeat.png",
+    "image": "/products/cocopeat.webp",
     "popular": false,
     "benefits": [
       "Superior water retention and aeration",
@@ -620,7 +620,7 @@ export const PRODUCTS = [
     "name": "LECA Balls",
     "category": "Agricultural Inputs",
     "description": "Lightweight expanded clay aggregate balls for drainage, hydroponics, and decorative mulching.",
-    "image": "/products/leca_balls.png",
+    "image": "/products/leca_balls.webp",
     "popular": false,
     "benefits": [
       "Prevents waterlogging with excellent drainage",
@@ -634,7 +634,7 @@ export const PRODUCTS = [
     "name": "Artificial Soils",
     "category": "Agricultural Inputs",
     "description": "Customized artificial soil mixes for container gardening and specialized cultivation.",
-    "image": "/products/cocopeat.png",
+    "image": "/products/cocopeat.webp",
     "popular": false,
     "benefits": [
       "Engineered for optimal plant growth",
@@ -648,7 +648,7 @@ export const PRODUCTS = [
     "name": "Fish Meal",
     "category": "Agricultural Inputs",
     "description": "Organic fish meal fertilizer rich in nitrogen, phosphorus, and trace minerals.",
-    "image": "/products/fish_meal.png",
+    "image": "/products/fish_meal.webp",
     "popular": false,
     "benefits": [
       "Rich in nitrogen and trace minerals",
@@ -662,7 +662,7 @@ export const PRODUCTS = [
     "name": "Green Net / Polyfilms",
     "category": "Greenhouse",
     "description": "UV-stabilized shade nets and polyfilms for optimal light diffusion and temperature control.",
-    "image": "/products/green_net_polyfilms.png",
+    "image": "/products/green_net_polyfilms.webp",
     "popular": false,
     "benefits": [
       "UV-stabilized for long outdoor life",
@@ -676,7 +676,7 @@ export const PRODUCTS = [
     "name": "Greenhouse Accessories",
     "category": "Greenhouse",
     "description": "Complete range of accessories for greenhouse construction and maintenance.",
-    "image": "/products/greenhouse_accessories.png",
+    "image": "/products/greenhouse_accessories.webp",
     "popular": false,
     "benefits": [
       "Compatible with standard greenhouse structures",
@@ -690,7 +690,7 @@ export const PRODUCTS = [
     "name": "Mulch Films",
     "category": "Greenhouse",
     "description": "Agricultural mulch films for weed suppression, moisture retention, and soil temperature regulation.",
-    "image": "/products/mulch_films.png",
+    "image": "/products/mulch_films.webp",
     "popular": false,
     "benefits": [
       "Suppresses weeds without chemicals",
@@ -704,7 +704,7 @@ export const PRODUCTS = [
     "name": "Walk-in Tunnels",
     "category": "Greenhouse",
     "description": "Cost-effective walk-in tunnel structures for seasonal crop protection.",
-    "image": "/products/walk-in_tunnels.png",
+    "image": "/products/walk-in_tunnels.webp",
     "popular": false,
     "benefits": [
       "Affordable protected cultivation solution",
@@ -718,7 +718,7 @@ export const PRODUCTS = [
     "name": "Small Greenhouse",
     "category": "Greenhouse",
     "description": "Compact greenhouse structures for nurseries, research, and small-scale protected cultivation.",
-    "image": "/products/small_greenhouse.png",
+    "image": "/products/small_greenhouse.webp",
     "popular": true,
     "benefits": [
       "Complete climate control for sensitive plants",
@@ -732,7 +732,7 @@ export const PRODUCTS = [
     "name": "Propagation Sheets",
     "category": "Greenhouse",
     "description": "Clear propagation sheets for maintaining humidity during seed germination.",
-    "image": "/products/propagation_sheets.png",
+    "image": "/products/propagation_sheets.webp",
     "popular": false,
     "benefits": [
       "Maintains optimal humidity levels",
@@ -746,7 +746,7 @@ export const PRODUCTS = [
     "name": "Trellis Nets",
     "category": "Greenhouse",
     "description": "High-strength trellis nets for vertical crop support in greenhouses.",
-    "image": "/products/trellis_net.png",
+    "image": "/products/trellis_net.webp",
     "popular": false,
     "benefits": [
       "Strong support for climbing vegetables",
@@ -760,7 +760,7 @@ export const PRODUCTS = [
     "name": "Pop-up Sprinklers",
     "category": "Irrigation",
     "description": "Automatic pop-up sprinklers that retract flush with ground for clean landscape.",
-    "image": "/products/pop-up_sprinkler.png",
+    "image": "/products/pop-up_sprinkler.webp",
     "popular": false,
     "benefits": [
       "Retract flush when not in use",
@@ -774,7 +774,7 @@ export const PRODUCTS = [
     "name": "Garden Sprinklers",
     "category": "Irrigation",
     "description": "Versatile garden sprinklers for uniform water distribution across lawns and gardens.",
-    "image": "/products/garden_sprinkler.png",
+    "image": "/products/garden_sprinkler.webp",
     "popular": false,
     "benefits": [
       "Multiple spray patterns available",
@@ -788,7 +788,7 @@ export const PRODUCTS = [
     "name": "Foggers",
     "category": "Irrigation",
     "description": "High-pressure foggers for greenhouse humidity control and cooling with ultra-fine mist.",
-    "image": "/products/foggers.png",
+    "image": "/products/foggers.webp",
     "popular": false,
     "benefits": [
       "Ultra-fine mist for precise humidity control",
@@ -802,7 +802,7 @@ export const PRODUCTS = [
     "name": "Rain Guns",
     "category": "Irrigation",
     "description": "Long-range rain guns for irrigating large agricultural fields with high water output.",
-    "image": "/products/rain_guns.png",
+    "image": "/products/rain_guns.webp",
     "popular": true,
     "benefits": [
       "Covers large field areas efficiently",
@@ -816,7 +816,7 @@ export const PRODUCTS = [
     "name": "Mini Sprinklers",
     "category": "Irrigation",
     "description": "Micro irrigation mini sprinklers for precise watering of individual plants and nursery beds.",
-    "image": "/products/mini_sprinkler.png",
+    "image": "/products/mini_sprinkler.webp",
     "popular": false,
     "benefits": [
       "Low flow rate reduces water wastage",
@@ -830,7 +830,7 @@ export const PRODUCTS = [
     "name": "Pumps",
     "category": "Irrigation",
     "description": "Reliable water pumps for agricultural and garden irrigation in multiple configurations.",
-    "image": "/products/pumps.png",
+    "image": "/products/pumps.webp",
     "popular": false,
     "benefits": [
       "Energy-efficient and reliable operation",
@@ -844,7 +844,7 @@ export const PRODUCTS = [
     "name": "Bell Fountain Sprinkler",
     "category": "Irrigation",
     "description": "Decorative bell fountain sprinkler combining irrigation with visual appeal.",
-    "image": "/products/bell_fountain_sprinkler.png",
+    "image": "/products/bell_fountain_sprinkler.webp",
     "popular": false,
     "benefits": [
       "Aesthetic water display for gardens",
@@ -858,7 +858,7 @@ export const PRODUCTS = [
     "name": "Drip Irrigation",
     "category": "Irrigation",
     "description": "Complete drip irrigation systems delivering water directly to plant roots, saving up to 60% water.",
-    "image": "/products/drip_irrigation.png",
+    "image": "/products/drip_irrigation.webp",
     "popular": true,
     "benefits": [
       "Saves up to 60% water vs flood irrigation",
@@ -872,7 +872,7 @@ export const PRODUCTS = [
     "name": "Valves",
     "category": "Irrigation",
     "description": "Durable irrigation valves for flow control in manual and automatic configurations.",
-    "image": "/products/valves.png",
+    "image": "/products/valves.webp",
     "popular": false,
     "benefits": [
       "Precise flow control and system management",
@@ -886,7 +886,7 @@ export const PRODUCTS = [
     "name": "Irrigation Accessories",
     "category": "Irrigation",
     "description": "Supporting accessories including filters, joiners, pipes, and fittings for complete irrigation setup.",
-    "image": "/products/garden_sprinkler.png",
+    "image": "/products/garden_sprinkler.webp",
     "popular": false,
     "benefits": [
       "Complete accessory range for any system",
@@ -900,7 +900,7 @@ export const PRODUCTS = [
     "name": "Chakki",
     "category": "Miscellaneous",
     "description": "Traditional stone grinding mill for grains and spices in manual and electric variants.",
-    "image": "/products/chakki.png",
+    "image": "/products/chakki.webp",
     "popular": false,
     "benefits": [
       "Preserves natural grain nutrition",
@@ -914,7 +914,7 @@ export const PRODUCTS = [
     "name": "Snake Rescue Kit",
     "category": "Miscellaneous",
     "description": "Professional snake rescue kit for safe handling and relocation from farms and residential areas.",
-    "image": "/products/snake_rescue_kit.png",
+    "image": "/products/snake_rescue_kit.webp",
     "popular": true,
     "benefits": [
       "Safe and humane snake handling",
@@ -928,7 +928,7 @@ export const PRODUCTS = [
     "name": "Azola Beds",
     "category": "Miscellaneous",
     "description": "Ready-to-use azola beds for producing protein-rich azola as animal feed and green manure.",
-    "image": "/products/azola_bed.png",
+    "image": "/products/azola_bed.webp",
     "popular": false,
     "benefits": [
       "Produces protein-rich animal feed supplement",
@@ -942,7 +942,7 @@ export const PRODUCTS = [
     "name": "Milk Can",
     "category": "Miscellaneous",
     "description": "Food-grade stainless steel and aluminum milk cans for safe dairy storage and transport.",
-    "image": "/products/milk_can.png",
+    "image": "/products/milk_can.webp",
     "popular": false,
     "benefits": [
       "Food-grade material ensures safety",
@@ -956,7 +956,7 @@ export const PRODUCTS = [
     "name": "Sieve",
     "category": "Miscellaneous",
     "description": "Agricultural sieves for grading and sorting seeds, grains, and soil.",
-    "image": "/products/seive.png",
+    "image": "/products/seive.webp",
     "popular": false,
     "benefits": [
       "Accurate grading for seeds and grains",
@@ -970,7 +970,7 @@ export const PRODUCTS = [
     "name": "Crocodile Rescue Kit",
     "category": "Miscellaneous",
     "description": "Specialized crocodile rescue and handling equipment for wildlife management.",
-    "image": "/products/crocodile_rescue_kit.png",
+    "image": "/products/crocodile_rescue_kit.webp",
     "popular": false,
     "benefits": [
       "Professional-grade handling equipment",
@@ -984,7 +984,7 @@ export const PRODUCTS = [
     "name": "Monkey Rescue Kit",
     "category": "Miscellaneous",
     "description": "Humane monkey rescue kit for safe capture and relocation from farms and orchards.",
-    "image": "/products/monkey_rescue_kit.png",
+    "image": "/products/monkey_rescue_kit.webp",
     "popular": false,
     "benefits": [
       "Humane capture and relocation design",
@@ -998,7 +998,7 @@ export const PRODUCTS = [
     "name": "Leopard Rescue Net",
     "category": "Miscellaneous",
     "description": "Heavy-duty leopard rescue net for wildlife rescue operations in rural areas.",
-    "image": "/products/leopard_rescue_net.png",
+    "image": "/products/leopard_rescue_net.webp",
     "popular": false,
     "benefits": [
       "High-strength nylon construction",

@@ -69,7 +69,13 @@ Build a showcase/catalogue website for Navya Enterprises, an agricultural equipm
 - [x] Theme-color updated to brand green #2E7D32
 - [x] robots meta set to index, follow
 
-### Static Data Migration (Feb 2026)
+### Image Optimization & Independence (Feb 2026)
+- [x] Moved hero image from Emergent CDN to local `/hero-home.webp` (25MB → 740KB)
+- [x] Compressed all 69 product images PNG→WebP preserving RGBA transparency (253MB → 2MB)
+- [x] Fixed black background bug (was converting RGBA→RGB, losing transparency)
+- [x] Removed all PNG originals — only lightweight WebP files remain
+- [x] Zero external image dependencies — all assets are local
+- [x] 100% test pass rate (iteration 9)
 - [x] Removed all backend API dependencies from frontend
 - [x] Created `/src/data/products.js` with 70 products, categories, popular filter, getProductById helper
 - [x] Created `/src/data/contact.js` with contact info

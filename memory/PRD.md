@@ -69,14 +69,19 @@ Build a showcase/catalogue website for Navya Enterprises, an agricultural equipm
 - [x] Theme-color updated to brand green #2E7D32
 - [x] robots meta set to index, follow
 
-### Deployment Bug Fixes (Feb 2026)
-- [x] Fixed `ScrollToTop` component — replaced `require("react-router-dom")` with proper ESM import (was crashing React in production builds, causing blank page)
-- [x] Guarded `emergent-main.js` script to only load on emergentagent.com domains
-- [x] Successfully deployed to Vercel
+### Static Data Migration (Feb 2026)
+- [x] Removed all backend API dependencies from frontend
+- [x] Created `/src/data/products.js` with 70 products, categories, popular filter, getProductById helper
+- [x] Created `/src/data/contact.js` with contact info
+- [x] Updated HomePage, ProductsPage, ProductDetailPage, ConnectPage to use static imports
+- [x] Removed axios API calls from all pages
+- [x] Site is now fully static — works on Vercel with zero backend dependency
+- [x] 100% test pass rate (iteration 8)
 
 ## Deployment Notes
 - **Vercel**: Root directory = `frontend/`. `vercel.json` handles SPA rewrites. Build: `yarn build`. Output: `build/`.
-- **Environment Variable on Vercel**: `REACT_APP_BACKEND_URL` = `https://agri-layout-preview.preview.emergentagent.com`
+- **No backend needed**: All data is embedded in the frontend as static JS files.
+- **`REACT_APP_BACKEND_URL` is no longer required** on Vercel — can be removed from env vars.
 - **OG Image**: After custom domain setup, update `og:image`, `og:url`, and `canonical` in `index.html` with production domain absolute URLs.
 - **Node Version**: Set `NODE_VERSION=20` in Vercel env vars.
 
